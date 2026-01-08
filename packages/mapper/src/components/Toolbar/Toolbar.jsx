@@ -9,7 +9,7 @@ export default function Toolbar({ onAddDevice, showPortLabels, onTogglePortLabel
     { type: DEVICE_TYPES.USB_DEVICE, label: 'USB Device', icon: '⌨️' },
     { type: DEVICE_TYPES.NETWORK_DEVICE, label: 'Network', icon: '🌐' },
     { type: DEVICE_TYPES.ADAPTER, label: 'Adapter', icon: '🔄' },
-    { type: DEVICE_TYPES.OTHER, label: 'Other', icon: '📦' }
+    { type: DEVICE_TYPES.OTHER, label: 'Other', icon: '⚙️' }
   ];
 
   const handleDragStart = (event, deviceType) => {
