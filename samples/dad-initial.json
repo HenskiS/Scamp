@@ -1,0 +1,197 @@
+{
+  "version": "1.0",
+  "name": "Dad Initial",
+  "devices": [
+    {
+      "id": "device-mk5r9lkd-i4zio",
+      "type": "computer",
+      "label": "Mac Studio",
+      "detectionId": null,
+      "position": {
+        "x": -83.32039129375829,
+        "y": -240.56988896432048
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "thunderbolt-1",
+          "label": "TB1",
+          "type": "thunderbolt",
+          "position": "bottom",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "thunderbolt-2",
+          "label": "TB2",
+          "type": "thunderbolt",
+          "position": "bottom",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "thunderbolt-3",
+          "label": "TB3",
+          "type": "thunderbolt",
+          "position": "bottom",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "port-mk5r9sn7-kl3fm",
+          "label": "TB4",
+          "type": "thunderbolt",
+          "position": "bottom",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "port-mk5red5h-b3kcz",
+          "label": "Eth",
+          "type": "ethernet",
+          "position": "bottom",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "port-mk5reyro-ihqlz",
+          "label": "USB1",
+          "type": "usb",
+          "position": "right",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "port-mk5rf7bo-myu83",
+          "label": "USB2",
+          "type": "usb",
+          "position": "right",
+          "direction": "bidirectional"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5raisj-087wg",
+      "type": "hub",
+      "label": "OWC",
+      "detectionId": null,
+      "position": {
+        "x": -117.67352267634564,
+        "y": -25.65381675355637
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "TB Input",
+          "type": "usb",
+          "position": "top",
+          "direction": "in"
+        },
+        {
+          "id": "usb-1",
+          "label": "USB 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-2",
+          "label": "USB 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-3",
+          "label": "USB 3",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-4",
+          "label": "USB 4",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "port-mk5rj4y4-h7s00",
+          "label": "TB 1",
+          "type": "thunderbolt",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "port-mk5rl1f5-19nzi",
+          "label": "USB 5",
+          "type": "usb",
+          "position": "left",
+          "direction": "bidirectional"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5rlgkw-4jb2q",
+      "type": "usb-device",
+      "label": "iLok FR",
+      "detectionId": null,
+      "position": {
+        "x": -349.3668336439087,
+        "y": -11.342379954068335
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "right",
+          "direction": "in"
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn-mk5rd4jx-ne7cd",
+      "source": "device-mk5r9lkd-i4zio",
+      "target": "device-mk5raisj-087wg",
+      "sourcePort": "thunderbolt-1",
+      "targetPort": "upstream",
+      "type": "thunderbolt",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5rlr1c-98uuz",
+      "source": "device-mk5raisj-087wg",
+      "target": "device-mk5rlgkw-4jb2q",
+      "sourcePort": "port-mk5rl1f5-19nzi",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    }
+  ],
+  "connectionTypes": [
+    {
+      "id": "usb",
+      "name": "USB",
+      "color": "#4169e1"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Thunderbolt",
+      "color": "#f4c430"
+    },
+    {
+      "id": "ethernet",
+      "name": "Ethernet",
+      "color": "#32cd32"
+    },
+    {
+      "id": "displayport",
+      "name": "DisplayPort",
+      "color": "#9370db"
+    },
+    {
+      "id": "hdmi",
+      "name": "HDMI",
+      "color": "#ff6347"
+    }
+  ]
+}
