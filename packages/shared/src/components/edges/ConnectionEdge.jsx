@@ -21,7 +21,7 @@ export default function ConnectionEdge({
     targetPosition,
   });
 
-  const { connectionType, label, sourcePort, targetPort, highlighted = false, connectionTypes } = data;
+  const { connectionType, label, sourcePort, targetPort, highlighted = false, connectionTypes, showPortLabels = true } = data;
 
   // Get connection type display name
   const getConnectionTypeName = () => {
@@ -93,7 +93,7 @@ export default function ConnectionEdge({
         )}
 
         {/* Source port label */}
-        {sourcePort && (
+        {showPortLabels && sourcePort && (
           <div
             style={{
               position: 'absolute',
@@ -107,7 +107,7 @@ export default function ConnectionEdge({
         )}
 
         {/* Target port label */}
-        {targetPort && (
+        {showPortLabels && targetPort && (
           <div
             style={{
               position: 'absolute',

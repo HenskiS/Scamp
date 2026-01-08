@@ -8,8 +8,8 @@
       "label": "Mac Studio",
       "detectionId": null,
       "position": {
-        "x": -83.32039129375829,
-        "y": -240.56988896432048
+        "x": -128.3203912937583,
+        "y": -322.0698889643205
       },
       "canvas": "current",
       "ports": [
@@ -203,7 +203,7 @@
     {
       "id": "device-mk5rqzqj-md293",
       "type": "hub",
-      "label": "USB Hub Apanage",
+      "label": "Apanage USB",
       "detectionId": null,
       "position": {
         "x": -37.46786639214883,
@@ -444,8 +444,8 @@
       "label": "Eth>USB Mac Tower Keyboard EMPTY",
       "detectionId": null,
       "position": {
-        "x": 438.2525078453893,
-        "y": -141.51484368892483
+        "x": 430.2525078453893,
+        "y": -149.51484368892483
       },
       "canvas": "current",
       "ports": [
@@ -632,6 +632,114 @@
           "direction": "out"
         }
       ]
+    },
+    {
+      "id": "device-mk5u094l-ieff6",
+      "type": "adapter",
+      "label": "TB>HDMI Studio Mon 2",
+      "detectionId": null,
+      "position": {
+        "x": 25.8531566015522,
+        "y": -252.98554067167504
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "input",
+          "label": "In",
+          "type": "thunderbolt",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "output",
+          "label": "Out",
+          "type": "hdmi",
+          "position": "right",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5u4zjn-w94cu",
+      "type": "adapter",
+      "label": "HDMI>Eth Studio Mon 2",
+      "detectionId": null,
+      "position": {
+        "x": 237.18910548469378,
+        "y": -293.88933921382943
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "input",
+          "label": "In",
+          "type": "hdmi",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "output",
+          "label": "Out",
+          "type": "ethernet",
+          "position": "right",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5u69w7-670ha",
+      "type": "adapter",
+      "label": "Eth>HDMI Studio Mon 2",
+      "detectionId": null,
+      "position": {
+        "x": 570.5885162348134,
+        "y": -299.8361929311159
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "input",
+          "label": "In",
+          "type": "ethernet",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "output",
+          "label": "Out",
+          "type": "hdmi",
+          "position": "right",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5u6kgp-2escq",
+      "type": "other",
+      "label": "Mon 2 Controller",
+      "detectionId": null,
+      "position": {
+        "x": 790.4771184403603,
+        "y": -201.7989176828487
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "port-mk5u6pyk-2py60",
+          "label": "HDMI 3",
+          "type": "hdmi",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "port-mk5u6twq-pnfvr",
+          "label": "USB 3",
+          "type": "usb",
+          "position": "left",
+          "direction": "bidirectional"
+        }
+      ]
     }
   ],
   "connections": [
@@ -639,7 +747,7 @@
       "id": "conn-mk5rd4jx-ne7cd",
       "source": "device-mk5r9lkd-i4zio",
       "target": "device-mk5raisj-087wg",
-      "sourcePort": "thunderbolt-1",
+      "sourcePort": "thunderbolt-2",
       "targetPort": "upstream",
       "type": "thunderbolt",
       "label": ""
@@ -814,6 +922,42 @@
       "targetPort": "input",
       "type": "ethernet",
       "label": "Black Eth unlabeled (not flat)"
+    },
+    {
+      "id": "conn-mk5u0q9f-fdi2i",
+      "source": "device-mk5r9lkd-i4zio",
+      "target": "device-mk5u094l-ieff6",
+      "sourcePort": "thunderbolt-3",
+      "targetPort": "input",
+      "type": "thunderbolt",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5u5von-cq8n6",
+      "source": "device-mk5u094l-ieff6",
+      "target": "device-mk5u4zjn-w94cu",
+      "sourcePort": "output",
+      "targetPort": "input",
+      "type": "hdmi",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5ubiup-3e2ks",
+      "source": "device-mk5u69w7-670ha",
+      "target": "device-mk5u6kgp-2escq",
+      "sourcePort": "output",
+      "targetPort": "port-mk5u6pyk-2py60",
+      "type": "hdmi",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5ubrq7-kgugi",
+      "source": "device-mk5u4zjn-w94cu",
+      "target": "device-mk5u69w7-670ha",
+      "sourcePort": "output",
+      "targetPort": "input",
+      "type": "ethernet",
+      "label": "Blue Eth on floor"
     }
   ],
   "connectionTypes": [

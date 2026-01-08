@@ -21,7 +21,8 @@ const nodeTypes = {
   'usb-device': DynamicDeviceNode,
   'network-device': DynamicDeviceNode,
   'thunderbolt-device': DynamicDeviceNode,
-  'adapter': DynamicDeviceNode
+  'adapter': DynamicDeviceNode,
+  'other': DynamicDeviceNode
 };
 
 // Register custom edge types
@@ -98,7 +99,7 @@ export default function TopologyCanvas({
 
       const edgesWithData = transformedEdges.map(edge => ({
         ...edge,
-        data: { ...edge.data, highlighted: false }
+        data: { ...edge.data, highlighted: false, showPortLabels }
       }));
 
       setNodes(nodesWithLabels);

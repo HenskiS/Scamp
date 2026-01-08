@@ -22,9 +22,9 @@ const getDeviceIcon = (type) => {
     'network-device': '🌐',
     'thunderbolt-device': '⚡',
     'adapter': '🔄',
-    'other': '📦'
+    'other': '⚙️'
   };
-  return icons[type] || '📦';
+  return icons[type] || '⚙️';
 };
 
 // Get color for device type
