@@ -248,6 +248,64 @@ Uses native HTML5 drag-and-drop API:
 
 ---
 
+## Recent Changes (2026-01-08)
+
+### Custom Connection Types System
+
+1. **Connection Types Editor** - New right sidebar for managing custom cable/connection types:
+   - Toggle with "Cable Types ▶/◀" button in header
+   - Add custom connection types with name and color
+   - Edit existing types (name and color picker)
+   - Delete types (with protection against deleting types in use)
+   - Visual color picker + hex input field
+   - Files: [ConnectionTypesEditor.jsx](packages/mapper/src/components/ConnectionTypesEditor/ConnectionTypesEditor.jsx), [ConnectionTypesEditor.module.css](packages/mapper/src/components/ConnectionTypesEditor/ConnectionTypesEditor.module.css)
+
+2. **Dynamic Connection Type System** - Connection types are now part of the topology data model:
+   - Default types: USB (blue), Thunderbolt (gold), Ethernet (green), DisplayPort (purple), HDMI (red)
+   - Custom types stored in topology JSON with `{ id, name, color }` format
+   - Backwards compatible: old files without `connectionTypes` get defaults added automatically
+   - File: [fileFormat.js](packages/shared/src/utils/fileFormat.js:24-31,95-101)
+
+3. **State Management** - Added CRUD operations for connection types:
+   - `addConnectionType()`, `updateConnectionType()`, `removeConnectionType()`
+   - Protection against deleting types that are in use by connections or ports
+   - File: [useTopologyState.js](packages/shared/src/hooks/useTopologyState.js:191-232)
+
+4. **Dynamic Colors** - Connection type colors now flow through entire system:
+   - Port handles on devices use custom colors
+   - Connection edges use custom colors
+   - All dropdowns show custom type names
+   - Files: [DynamicDeviceNode.jsx](packages/shared/src/components/nodes/DynamicDeviceNode.jsx:44-60), [dataTransform.js](packages/shared/src/utils/dataTransform.js:59-96)
+
+5. **Display Names Everywhere** - All UI components now show proper connection type names:
+   - Sidebar device port lists
+   - Sidebar connection lists
+   - DeviceEditor connections section
+   - ConnectionEditor type dropdown
+   - DeviceEditor port type dropdown
+   - Connection edge labels on canvas
+   - Files: [Sidebar.jsx](packages/mapper/src/components/Sidebar/Sidebar.jsx:24-28), [ConnectionEdge.jsx](packages/shared/src/components/edges/ConnectionEdge.jsx:26-40), [DeviceEditor.jsx](packages/mapper/src/components/DeviceEditor/DeviceEditor.jsx:37-41)
+
+6. **Missing Type Handling** - Graceful degradation for deleted or missing types:
+   - DeviceEditor shows missing port types as "(missing)" in dropdown
+   - ConnectionEditor shows missing connection types as "(missing)" in dropdown
+   - Prevents items from disappearing when editing
+   - Files: [DeviceEditor.jsx](packages/mapper/src/components/DeviceEditor/DeviceEditor.jsx:12-24), [ConnectionEditor.jsx](packages/mapper/src/components/ConnectionEditor/ConnectionEditor.jsx:16-24)
+
+7. **Validation Fix** - Fixed critical bug in connection type validation:
+   - Was replacing valid types instead of adding to them
+   - Now accepts both default types (usb, thunderbolt, etc.) AND custom types
+   - File: [fileFormat.js](packages/shared/src/utils/fileFormat.js:209-224)
+
+8. **Other Device Type** - Added generic device type for miscellaneous equipment:
+   - No default ports (user adds their own)
+   - Box icon (📦)
+   - Gray border color
+   - Perfect for audio interfaces, MIDI controllers, iLoks, dongles, etc.
+   - Files: [fileFormat.js](packages/shared/src/utils/fileFormat.js:13,92), [DynamicDeviceNode.jsx](packages/shared/src/components/nodes/DynamicDeviceNode.jsx:25,40), [Toolbar.jsx](packages/mapper/src/components/Toolbar/Toolbar.jsx:12)
+
+---
+
 ## Known Issues & Limitations
 
 ### None Currently Identified ✓
@@ -261,7 +319,7 @@ All requested features have been implemented and are working as expected.
 ### Basic Topology Operations
 - [ ] Create new topology
 - [ ] Edit setup name in header
-- [ ] Add all 7 device types (Computer, Hub, Display, USB Device, Network Device, Thunderbolt Device, Adapter)
+- [ ] Add all 8 device types (Computer, Hub, Display, USB Device, Network Device, Thunderbolt Device, Adapter, Other)
 - [ ] Click to add devices at random positions
 - [ ] Drag devices from toolbar to specific canvas positions
 - [ ] Draw connections between devices
