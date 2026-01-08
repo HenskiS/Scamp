@@ -68,6 +68,13 @@
           "type": "hdmi",
           "position": "top",
           "direction": "bidirectional"
+        },
+        {
+          "id": "port-mk5vi41t-0rgoa",
+          "label": "SD Slot",
+          "type": "ctype-mk5vhpzn-sy7df",
+          "position": "left",
+          "direction": "in"
         }
       ]
     },
@@ -1090,6 +1097,26 @@
           "direction": "in"
         }
       ]
+    },
+    {
+      "id": "device-mk5vh8yf-qan6c",
+      "type": "other",
+      "label": "MicroSD Card",
+      "detectionId": null,
+      "position": {
+        "x": -610.0537570845489,
+        "y": -556.815431191366
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "port-mk5vhvhu-f23ar",
+          "label": "Port 1",
+          "type": "ctype-mk5vhpzn-sy7df",
+          "position": "right",
+          "direction": "out"
+        }
+      ]
     }
   ],
   "connections": [
@@ -1434,6 +1461,15 @@
       "targetPort": "upstream",
       "type": "hdmi",
       "label": ""
+    },
+    {
+      "id": "conn-mk5viiiq-njj1g",
+      "source": "device-mk5vh8yf-qan6c",
+      "target": "device-mk5r9lkd-i4zio",
+      "sourcePort": "port-mk5vhvhu-f23ar",
+      "targetPort": "port-mk5vi41t-0rgoa",
+      "type": "ctype-mk5vhpzn-sy7df",
+      "label": ""
     }
   ],
   "connectionTypes": [
@@ -1461,6 +1497,11 @@
       "id": "hdmi",
       "name": "HDMI",
       "color": "#ff6347"
+    },
+    {
+      "id": "ctype-mk5vhpzn-sy7df",
+      "name": "SD Card",
+      "color": "#888888"
     }
   ]
 }
