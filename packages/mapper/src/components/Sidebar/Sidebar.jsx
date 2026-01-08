@@ -13,12 +13,18 @@ export default function Sidebar({
 }) {
   const [activeTab, setActiveTab] = useState('devices'); // 'devices' or 'connections'
 
-  const { devices = [], connections = [] } = topology || {};
+  const { devices = [], connections = [], connectionTypes = [] } = topology || {};
 
   // Get device name by ID
   const getDeviceName = (deviceId) => {
     const device = devices.find(d => d.id === deviceId);
     return device?.label || deviceId;
+  };
+
+  // Get connection type name by ID
+  const getConnectionTypeName = (typeId) => {
+    const ct = connectionTypes.find(type => type.id === typeId);
+    return ct ? ct.name : typeId.toUpperCase();
   };
 
   return (
@@ -68,7 +74,7 @@ export default function Sidebar({
                       {device.ports.map(port => (
                         <div key={port.id} className={styles.portItem}>
                           <span className={styles.portLabel}>{port.label}</span>
-                          <span className={styles.portType}>{port.type}</span>
+                          <span className={styles.portType}>{getConnectionTypeName(port.type)}</span>
                           <span className={styles.portDirection}>{port.direction || 'bi'}</span>
                         </div>
                       ))}
@@ -93,7 +99,7 @@ export default function Sidebar({
                   title={`ID: ${conn.id}`}
                 >
                   <div className={styles.connectionHeader}>
-                    <span className={styles.connectionType}>{conn.type.toUpperCase()}</span>
+                    <span className={styles.connectionType}>{getConnectionTypeName(conn.type)}</span>
                     {conn.label && <span className={styles.connectionLabel}>"{conn.label}"</span>}
                   </div>
                   <div className={styles.connectionPath}>

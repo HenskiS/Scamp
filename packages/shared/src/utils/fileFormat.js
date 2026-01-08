@@ -9,10 +9,11 @@ export const DEVICE_TYPES = {
   USB_DEVICE: 'usb-device',
   NETWORK_DEVICE: 'network-device',
   THUNDERBOLT_DEVICE: 'thunderbolt-device',
-  ADAPTER: 'adapter'
+  ADAPTER: 'adapter',
+  OTHER: 'other'
 };
 
-// Connection type constants
+// Connection type constants (for backwards compatibility)
 export const CONNECTION_TYPES = {
   USB: 'usb',
   THUNDERBOLT: 'thunderbolt',
@@ -20,6 +21,15 @@ export const CONNECTION_TYPES = {
   DISPLAYPORT: 'displayport',
   HDMI: 'hdmi'
 };
+
+// Default connection types with colors
+export const DEFAULT_CONNECTION_TYPES = [
+  { id: 'usb', name: 'USB', color: '#4169e1' },
+  { id: 'thunderbolt', name: 'Thunderbolt', color: '#f4c430' },
+  { id: 'ethernet', name: 'Ethernet', color: '#32cd32' },
+  { id: 'displayport', name: 'DisplayPort', color: '#9370db' },
+  { id: 'hdmi', name: 'HDMI', color: '#ff6347' }
+];
 
 // Canvas type constants
 export const CANVAS_TYPES = {
@@ -78,7 +88,8 @@ const DEFAULT_PORTS = {
   [DEVICE_TYPES.ADAPTER]: [
     { id: 'input', label: 'In', type: CONNECTION_TYPES.USB, position: PORT_POSITIONS.LEFT, direction: PORT_DIRECTIONS.IN },
     { id: 'output', label: 'Out', type: CONNECTION_TYPES.ETHERNET, position: PORT_POSITIONS.RIGHT, direction: PORT_DIRECTIONS.OUT }
-  ]
+  ],
+  [DEVICE_TYPES.OTHER]: [] // No default ports - user can add their own
 };
 
 // Factory function to create a new empty topology
@@ -87,7 +98,8 @@ export function createEmptyTopology(name = 'Untitled Setup') {
     version: FILE_FORMAT_VERSION,
     name,
     devices: [],
-    connections: []
+    connections: [],
+    connectionTypes: JSON.parse(JSON.stringify(DEFAULT_CONNECTION_TYPES))
   };
 }
 
@@ -150,6 +162,18 @@ export function createPort({
   };
 }
 
+// Factory function to create a new connection type
+export function createConnectionType({
+  name,
+  color = '#888888'
+}) {
+  return {
+    id: generateId('ctype'),
+    name,
+    color
+  };
+}
+
 // Generate a unique ID
 function generateId(prefix) {
   const timestamp = Date.now().toString(36);
@@ -184,6 +208,23 @@ export function validateTopology(topology) {
     return { valid: false, errors };
   }
 
+  // connectionTypes field is optional for backwards compatibility
+  // Build a set of all valid connection type IDs
+  let validConnectionTypeIds = new Set(Object.values(CONNECTION_TYPES));
+
+  if (topology.connectionTypes) {
+    if (!Array.isArray(topology.connectionTypes)) {
+      errors.push('connectionTypes must be an array');
+    } else {
+      // Add custom connection type IDs to the valid set
+      topology.connectionTypes.forEach(ct => {
+        if (ct && ct.id) {
+          validConnectionTypeIds.add(ct.id);
+        }
+      });
+    }
+  }
+
   // Validate devices
   const deviceIds = new Set();
   const validDeviceTypes = Object.values(DEVICE_TYPES);
@@ -215,8 +256,6 @@ export function validateTopology(topology) {
   });
 
   // Validate connections
-  const validConnectionTypes = Object.values(CONNECTION_TYPES);
-
   topology.connections.forEach((conn, index) => {
     if (!conn.id) {
       errors.push(`Connection at index ${index} missing id`);
@@ -230,7 +269,7 @@ export function validateTopology(topology) {
       errors.push(`Connection ${conn.id || index} references invalid target device: ${conn.target}`);
     }
 
-    if (!conn.type || !validConnectionTypes.includes(conn.type)) {
+    if (!conn.type || !validConnectionTypeIds.has(conn.type)) {
       errors.push(`Connection ${conn.id || index} has invalid type: ${conn.type}`);
     }
 
@@ -253,6 +292,12 @@ export function validateTopology(topology) {
 export function parseTopologyFile(jsonString) {
   try {
     const topology = JSON.parse(jsonString);
+
+    // Backwards compatibility: add default connection types if missing
+    if (!topology.connectionTypes) {
+      topology.connectionTypes = JSON.parse(JSON.stringify(DEFAULT_CONNECTION_TYPES));
+    }
+
     const validation = validateTopology(topology);
 
     if (!validation.valid) {

@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { createEmptyTopology, createDevice, createConnection, CANVAS_TYPES } from '../utils/fileFormat.js';
+import { createEmptyTopology, createDevice, createConnection, createConnectionType, CANVAS_TYPES, DEFAULT_CONNECTION_TYPES } from '../utils/fileFormat.js';
 
 const STORAGE_KEY = 'scamp-topology';
 
@@ -10,7 +10,14 @@ function loadFromStorage() {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
-      return JSON.parse(stored);
+      const topology = JSON.parse(stored);
+
+      // Ensure connectionTypes exists (backwards compatibility)
+      if (!topology.connectionTypes) {
+        topology.connectionTypes = JSON.parse(JSON.stringify(DEFAULT_CONNECTION_TYPES));
+      }
+
+      return topology;
     }
   } catch (error) {
     console.error('Failed to load topology from localStorage:', error);
@@ -188,6 +195,49 @@ export function useTopologyState(initialTopology = null) {
     }));
   }, [getDevicesByCanvas, getConnectionsByCanvas]);
 
+  // Add a new connection type
+  const addConnectionType = useCallback((connectionTypeParams) => {
+    const newConnectionType = createConnectionType(connectionTypeParams);
+    setTopology(prev => ({
+      ...prev,
+      connectionTypes: [...(prev.connectionTypes || []), newConnectionType]
+    }));
+    return newConnectionType;
+  }, []);
+
+  // Update an existing connection type
+  const updateConnectionType = useCallback((connectionTypeId, updates) => {
+    setTopology(prev => ({
+      ...prev,
+      connectionTypes: (prev.connectionTypes || []).map(ct =>
+        ct.id === connectionTypeId
+          ? { ...ct, ...updates }
+          : ct
+      )
+    }));
+  }, []);
+
+  // Remove a connection type (only if not in use)
+  const removeConnectionType = useCallback((connectionTypeId) => {
+    setTopology(prev => {
+      // Check if any connection or port uses this type
+      const isTypeInUse =
+        prev.connections.some(conn => conn.type === connectionTypeId) ||
+        prev.devices.some(device =>
+          device.ports && device.ports.some(port => port.type === connectionTypeId)
+        );
+
+      if (isTypeInUse) {
+        return prev; // Don't remove if in use
+      }
+
+      return {
+        ...prev,
+        connectionTypes: (prev.connectionTypes || []).filter(ct => ct.id !== connectionTypeId)
+      };
+    });
+  }, []);
+
   return {
     // State
     topology,
@@ -208,6 +258,11 @@ export function useTopologyState(initialTopology = null) {
     addConnection,
     updateConnection,
     removeConnection,
+
+    // Connection type operations
+    addConnectionType,
+    updateConnectionType,
+    removeConnectionType,
 
     // Query operations
     getDevicesByCanvas,

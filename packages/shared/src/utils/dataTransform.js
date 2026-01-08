@@ -5,9 +5,10 @@ import { DEVICE_TYPES, CONNECTION_TYPES } from './fileFormat.js';
 /**
  * Transform a device object to a React Flow node
  * @param {Object} device - Device from topology
+ * @param {Array} connectionTypes - Optional array of connection types with colors
  * @returns {Object} React Flow node
  */
-export function deviceToNode(device) {
+export function deviceToNode(device, connectionTypes = null) {
   return {
     id: device.id,
     type: device.type, // Maps to custom node component
@@ -17,7 +18,8 @@ export function deviceToNode(device) {
       detectionId: device.detectionId,
       canvas: device.canvas,
       deviceType: device.type,
-      ports: device.ports || []
+      ports: device.ports || [],
+      connectionTypes: connectionTypes
     }
   };
 }
@@ -25,9 +27,10 @@ export function deviceToNode(device) {
 /**
  * Transform a connection object to a React Flow edge
  * @param {Object} connection - Connection from topology
+ * @param {Array} connectionTypes - Optional array of connection types with colors
  * @returns {Object} React Flow edge
  */
-export function connectionToEdge(connection) {
+export function connectionToEdge(connection, connectionTypes = null) {
   return {
     id: connection.id,
     source: connection.source,
@@ -39,19 +42,33 @@ export function connectionToEdge(connection) {
       connectionType: connection.type,
       label: connection.label,
       sourcePort: connection.sourcePort,
-      targetPort: connection.targetPort
+      targetPort: connection.targetPort,
+      connectionTypes: connectionTypes
     },
     animated: false,
-    style: getEdgeStyle(connection.type)
+    style: getEdgeStyle(connection.type, connectionTypes)
   };
 }
 
 /**
  * Get edge styling based on connection type
  * @param {string} connectionType - Type of connection
+ * @param {Array} connectionTypes - Optional array of connection types with colors
  * @returns {Object} Style object
  */
-function getEdgeStyle(connectionType) {
+function getEdgeStyle(connectionType, connectionTypes = null) {
+  // If connectionTypes is provided, use dynamic colors
+  if (connectionTypes && connectionTypes.length > 0) {
+    const ct = connectionTypes.find(type => type.id === connectionType);
+    if (ct) {
+      return {
+        stroke: ct.color,
+        strokeWidth: connectionType === CONNECTION_TYPES.THUNDERBOLT ? 3 : 2
+      };
+    }
+  }
+
+  // Fall back to hardcoded colors for backwards compatibility
   const styles = {
     [CONNECTION_TYPES.USB]: {
       stroke: 'var(--color-connection-usb, #f4c430)',
@@ -89,8 +106,11 @@ export function topologyToReactFlow(topology, canvas = 'current') {
   const canvasDevices = topology.devices.filter(device => device.canvas === canvas);
   const canvasDeviceIds = new Set(canvasDevices.map(d => d.id));
 
+  // Get connection types from topology
+  const connectionTypes = topology.connectionTypes || null;
+
   // Transform devices to nodes
-  const nodes = canvasDevices.map(deviceToNode);
+  const nodes = canvasDevices.map(device => deviceToNode(device, connectionTypes));
 
   // Filter connections where both source and target are on this canvas
   const canvasConnections = topology.connections.filter(
@@ -98,7 +118,7 @@ export function topologyToReactFlow(topology, canvas = 'current') {
   );
 
   // Transform connections to edges
-  const edges = canvasConnections.map(connectionToEdge);
+  const edges = canvasConnections.map(connection => connectionToEdge(connection, connectionTypes));
 
   return { nodes, edges };
 }

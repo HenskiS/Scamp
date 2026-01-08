@@ -89,6 +89,17 @@
   background-color: var(--color-border, #cccccc);
 }
 
+.activeButton {
+  background-color: var(--color-connection-thunderbolt, #4169e1);
+  color: #ffffff;
+  border-color: var(--color-connection-thunderbolt, #4169e1);
+}
+
+.activeButton:hover {
+  background-color: var(--color-connection-thunderbolt, #4169e1);
+  opacity: 0.9;
+}
+
 .message {
   margin-top: 8px;
   padding: 6px 12px;

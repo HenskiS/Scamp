@@ -21,7 +21,8 @@ const getDeviceIcon = (type) => {
     'usb-device': '⌨️',
     'network-device': '🌐',
     'thunderbolt-device': '⚡',
-    'adapter': '🔄'
+    'adapter': '🔄',
+    'other': '📦'
   };
   return icons[type] || '📦';
 };
@@ -35,13 +36,21 @@ const getDeviceColor = (type) => {
     'usb-device': 'var(--color-connection-usb, #4169e1)',
     'network-device': 'var(--color-connection-ethernet, #32cd32)',
     'thunderbolt-device': 'var(--color-connection-thunderbolt, #f4c430)',
-    'adapter': 'var(--color-border-dark, #999999)'
+    'adapter': 'var(--color-border-dark, #999999)',
+    'other': 'var(--color-border-dark, #999999)'
   };
   return colors[type] || 'var(--color-border-dark, #999999)';
 };
 
-// Get color for port type
-const getPortColor = (portType) => {
+// Get color for port type (with dynamic connection types support)
+const getPortColor = (portType, connectionTypes) => {
+  // If connectionTypes is provided, use dynamic colors
+  if (connectionTypes && connectionTypes.length > 0) {
+    const ct = connectionTypes.find(type => type.id === portType);
+    if (ct) return ct.color;
+  }
+
+  // Fall back to hardcoded colors for backwards compatibility
   const colors = {
     [CONNECTION_TYPES.USB]: 'var(--color-connection-usb, #4169e1)',
     [CONNECTION_TYPES.THUNDERBOLT]: 'var(--color-connection-thunderbolt, #f4c430)',
@@ -53,7 +62,7 @@ const getPortColor = (portType) => {
 };
 
 export default function DynamicDeviceNode({ data, selected }) {
-  const { label, deviceType, ports = [], showPortLabels = true, highlighted = false } = data;
+  const { label, deviceType, ports = [], showPortLabels = true, highlighted = false, connectionTypes } = data;
 
   // Group ports by position
   const portsByPosition = ports.reduce((acc, port) => {
@@ -89,7 +98,7 @@ export default function DynamicDeviceNode({ data, selected }) {
         const portsInPosition = ports.filter(p => p.position === port.position);
         const portIndex = portsInPosition.indexOf(port);
         const style = getPortStyle(port.position, portIndex, portsInPosition.length);
-        const portColor = getPortColor(port.type);
+        const portColor = getPortColor(port.type, connectionTypes);
 
         // Combine style with color
         const handleStyle = {

@@ -21,7 +21,23 @@ export default function ConnectionEdge({
     targetPosition,
   });
 
-  const { connectionType, label, sourcePort, targetPort, highlighted = false } = data;
+  const { connectionType, label, sourcePort, targetPort, highlighted = false, connectionTypes } = data;
+
+  // Get connection type display name
+  const getConnectionTypeName = () => {
+    if (!connectionType) return '';
+
+    // Look up the connection type name from the connectionTypes array
+    if (connectionTypes && connectionTypes.length > 0) {
+      const ct = connectionTypes.find(type => type.id === connectionType);
+      if (ct) return ct.name;
+    }
+
+    // Fall back to displaying the ID in uppercase
+    return connectionType.toUpperCase();
+  };
+
+  const connectionTypeName = getConnectionTypeName();
 
   // Calculate offset for port labels to avoid overlapping with nodes
   const getPortLabelOffset = (position) => {
@@ -69,8 +85,8 @@ export default function ConnectionEdge({
           >
             <div className={styles.labelContent}>
               {label && <span className={styles.customLabel}>{label}</span>}
-              {connectionType && (
-                <span className={styles.connectionType}>{connectionType.toUpperCase()}</span>
+              {connectionTypeName && (
+                <span className={styles.connectionType}>{connectionTypeName}</span>
               )}
             </div>
           </div>

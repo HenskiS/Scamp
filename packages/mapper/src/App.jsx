@@ -5,6 +5,7 @@ import DeviceEditor from './components/DeviceEditor/DeviceEditor.jsx';
 import ConnectionEditor from './components/ConnectionEditor/ConnectionEditor.jsx';
 import EventLog from './components/EventLog/EventLog.jsx';
 import Sidebar from './components/Sidebar/Sidebar.jsx';
+import ConnectionTypesEditor from './components/ConnectionTypesEditor/ConnectionTypesEditor.jsx';
 import '@scamp/shared/styles';
 import styles from './App.module.css';
 
@@ -25,6 +26,7 @@ function App() {
   });
   const [highlightedDeviceId, setHighlightedDeviceId] = useState(null);
   const [highlightedConnectionId, setHighlightedConnectionId] = useState(null);
+  const [showConnectionTypesEditor, setShowConnectionTypesEditor] = useState(false);
 
   // Save port label preference to localStorage
   useEffect(() => {
@@ -249,6 +251,41 @@ function App() {
     setHighlightedConnectionId(null);
   };
 
+  // Toggle connection types editor
+  const handleToggleConnectionTypesEditor = () => {
+    setShowConnectionTypesEditor(prev => !prev);
+  };
+
+  // Check if a connection type is in use
+  const isConnectionTypeInUse = (connectionTypeId) => {
+    return (
+      topologyState.topology.connections.some(conn => conn.type === connectionTypeId) ||
+      topologyState.topology.devices.some(device =>
+        device.ports && device.ports.some(port => port.type === connectionTypeId)
+      )
+    );
+  };
+
+  // Handle add connection type
+  const handleAddConnectionType = (params) => {
+    const newType = topologyState.addConnectionType(params);
+    logEvent('CONNECTION_TYPE_ADD', `Added connection type "${params.name}"`);
+    return newType;
+  };
+
+  // Handle update connection type
+  const handleUpdateConnectionType = (id, updates) => {
+    topologyState.updateConnectionType(id, updates);
+    logEvent('CONNECTION_TYPE_UPDATE', `Updated connection type "${updates.name || ''}"`);
+  };
+
+  // Handle delete connection type
+  const handleDeleteConnectionType = (id) => {
+    const connectionType = topologyState.topology.connectionTypes?.find(ct => ct.id === id);
+    topologyState.removeConnectionType(id);
+    logEvent('CONNECTION_TYPE_DELETE', `Deleted connection type "${connectionType?.name || id}"`);
+  };
+
   return (
     <TopologyContext.Provider value={{ ...topologyState, activeCanvas, setActiveCanvas }}>
       <div className={styles.app}>
@@ -273,6 +310,13 @@ function App() {
               <button onClick={handleNew} className={styles.button}>New</button>
               <button onClick={handleImport} className={styles.button}>Open</button>
               <button onClick={handleExport} className={styles.button}>Save</button>
+              <button
+                onClick={handleToggleConnectionTypesEditor}
+                className={`${styles.button} ${showConnectionTypesEditor ? styles.activeButton : ''}`}
+                title="Edit connection types"
+              >
+                Cable Types {showConnectionTypesEditor ? '◀' : '▶'}
+              </button>
             </div>
           </div>
         </header>
@@ -312,6 +356,15 @@ function App() {
               onEdgeMouseLeave={handleClearHighlight}
             />
           </div>
+          {showConnectionTypesEditor && (
+            <ConnectionTypesEditor
+              connectionTypes={topologyState.topology.connectionTypes || []}
+              onAddConnectionType={handleAddConnectionType}
+              onUpdateConnectionType={handleUpdateConnectionType}
+              onDeleteConnectionType={handleDeleteConnectionType}
+              isTypeInUse={isConnectionTypeInUse}
+            />
+          )}
         </main>
         <footer className={styles.footer}>
           <span>
@@ -326,6 +379,7 @@ function App() {
             device={editingDevice}
             connections={topologyState.topology.connections}
             devices={topologyState.topology.devices}
+            connectionTypes={topologyState.topology.connectionTypes}
             onSave={handleDeviceEditorSave}
             onCancel={handleDeviceEditorCancel}
             onDelete={handleDeviceEditorDelete}
@@ -336,6 +390,7 @@ function App() {
           <ConnectionEditor
             connection={editingConnection}
             devices={topologyState.topology.devices}
+            connectionTypes={topologyState.topology.connectionTypes}
             onSave={handleConnectionEditorSave}
             onCancel={handleConnectionEditorCancel}
             onDelete={handleConnectionEditorDelete}

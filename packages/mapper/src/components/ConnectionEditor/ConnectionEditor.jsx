@@ -2,13 +2,26 @@ import { useState } from 'react';
 import { CONNECTION_TYPES } from '@scamp/shared';
 import styles from './ConnectionEditor.module.css';
 
-export default function ConnectionEditor({ connection, devices, onSave, onCancel, onDelete }) {
+export default function ConnectionEditor({ connection, devices, connectionTypes, onSave, onCancel, onDelete }) {
   const [type, setType] = useState(connection.type);
   const [label, setLabel] = useState(connection.label || '');
   const [sourceId, setSourceId] = useState(connection.source);
   const [targetId, setTargetId] = useState(connection.target);
   const [sourcePortId, setSourcePortId] = useState(connection.sourcePort);
   const [targetPortId, setTargetPortId] = useState(connection.targetPort);
+
+  // Use dynamic connection types or fall back to hardcoded ones
+  let availableConnectionTypes = connectionTypes || Object.values(CONNECTION_TYPES).map(id => ({ id, name: id.toUpperCase() }));
+
+  // Add the connection's current type if it's not in the list
+  // (This handles cases where a type was deleted or the topology is from an old version)
+  const hasCurrentType = availableConnectionTypes.some(ct => ct.id === type);
+  if (!hasCurrentType && type) {
+    availableConnectionTypes = [
+      ...availableConnectionTypes,
+      { id: type, name: `${type.toUpperCase()} (missing)` }
+    ];
+  }
 
   // Find source and target devices
   const sourceDevice = devices.find(d => d.id === sourceId);
@@ -120,8 +133,8 @@ export default function ConnectionEditor({ connection, devices, onSave, onCancel
               onChange={(e) => setType(e.target.value)}
               className={styles.select}
             >
-              {Object.values(CONNECTION_TYPES).map(connType => (
-                <option key={connType} value={connType}>{connType.toUpperCase()}</option>
+              {availableConnectionTypes.map(ct => (
+                <option key={ct.id} value={ct.id}>{ct.name}</option>
               ))}
             </select>
           </div>

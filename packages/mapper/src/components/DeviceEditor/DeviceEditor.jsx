@@ -2,9 +2,26 @@ import { useState } from 'react';
 import { CONNECTION_TYPES, PORT_POSITIONS, PORT_DIRECTIONS, createPort } from '@scamp/shared';
 import styles from './DeviceEditor.module.css';
 
-export default function DeviceEditor({ device, connections, devices, onSave, onCancel, onDelete }) {
+export default function DeviceEditor({ device, connections, devices, connectionTypes, onSave, onCancel, onDelete }) {
   const [label, setLabel] = useState(device.label);
   const [ports, setPorts] = useState([...device.ports]);
+
+  // Use dynamic connection types or fall back to hardcoded ones
+  let availableConnectionTypes = connectionTypes || Object.values(CONNECTION_TYPES).map(id => ({ id, name: id.toUpperCase() }));
+
+  // Add any missing types that are used in the device's ports but not in the list
+  // (This handles cases where a type was deleted or the topology is from an old version)
+  const usedTypes = new Set(ports.map(p => p.type));
+  const availableTypeIds = new Set(availableConnectionTypes.map(ct => ct.id));
+  const missingTypes = Array.from(usedTypes).filter(typeId => !availableTypeIds.has(typeId));
+
+  if (missingTypes.length > 0) {
+    const missingTypeObjects = missingTypes.map(typeId => ({
+      id: typeId,
+      name: `${typeId.toUpperCase()} (missing)`
+    }));
+    availableConnectionTypes = [...availableConnectionTypes, ...missingTypeObjects];
+  }
 
   // Find connections that involve this device
   const deviceConnections = connections?.filter(
@@ -15,6 +32,12 @@ export default function DeviceEditor({ device, connections, devices, onSave, onC
   const getDeviceName = (deviceId) => {
     const dev = devices?.find(d => d.id === deviceId);
     return dev?.label || deviceId;
+  };
+
+  // Get connection type name by ID
+  const getConnectionTypeName = (typeId) => {
+    const ct = availableConnectionTypes.find(type => type.id === typeId);
+    return ct ? ct.name : typeId.toUpperCase();
   };
 
   const handleAddPort = () => {
@@ -115,8 +138,8 @@ export default function DeviceEditor({ device, connections, devices, onSave, onC
                     onChange={(e) => handlePortChange(index, 'type', e.target.value)}
                     className={styles.portSelect}
                   >
-                    {Object.values(CONNECTION_TYPES).map(type => (
-                      <option key={type} value={type}>{type.toUpperCase()}</option>
+                    {availableConnectionTypes.map(ct => (
+                      <option key={ct.id} value={ct.id}>{ct.name}</option>
                     ))}
                   </select>
                   <select
@@ -161,7 +184,7 @@ export default function DeviceEditor({ device, connections, devices, onSave, onC
 
                   return (
                     <div key={conn.id} className={styles.connectionItem}>
-                      <span className={styles.connectionType}>{conn.type}</span>
+                      <span className={styles.connectionType}>{getConnectionTypeName(conn.type)}</span>
                       <span className={styles.connectionDetail}>
                         {direction} {otherDeviceName}
                       </span>
