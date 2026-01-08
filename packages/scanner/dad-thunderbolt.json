@@ -1,0 +1,152 @@
+{
+  "SPThunderboltDataType" : [
+    {
+      "_name" : "thunderboltusb4_bus_5",
+      "device_name_key" : "Mac Studio",
+      "domain_uuid_key" : "B94D6834-B2D4-4B38-85A1-FDA4F3533603",
+      "receptacle_1_tag" : {
+        "current_link_width_key" : "0x1",
+        "current_speed_key" : "Up to 40 Gb/s x1",
+        "link_status_key" : "0x100",
+        "receptacle_id_key" : "6",
+        "receptacle_status_key" : "receptacle_no_devices_connected"
+      },
+      "route_string_key" : "0",
+      "switch_uid_key" : "0x05AC36F02065A295",
+      "vendor_name_key" : "Apple Inc."
+    },
+    {
+      "_name" : "thunderboltusb4_bus_4",
+      "device_name_key" : "Mac Studio",
+      "domain_uuid_key" : "1B1A44A6-EFF7-4787-819C-01A20EF4E5FB",
+      "receptacle_1_tag" : {
+        "current_link_width_key" : "0x1",
+        "current_speed_key" : "Up to 40 Gb/s x1",
+        "link_status_key" : "0x100",
+        "receptacle_id_key" : "5",
+        "receptacle_status_key" : "receptacle_no_devices_connected"
+      },
+      "route_string_key" : "0",
+      "switch_uid_key" : "0x05AC36F02065A294",
+      "vendor_name_key" : "Apple Inc."
+    },
+    {
+      "_name" : "thunderboltusb4_bus_3",
+      "device_name_key" : "Mac Studio",
+      "domain_uuid_key" : "94CB1FAD-DC5B-4564-BC3F-28C3E604CF1F",
+      "receptacle_1_tag" : {
+        "current_link_width_key" : "0x1",
+        "current_speed_key" : "Up to 40 Gb/s x1",
+        "link_status_key" : "0x100",
+        "receptacle_id_key" : "4",
+        "receptacle_status_key" : "receptacle_no_devices_connected"
+      },
+      "route_string_key" : "0",
+      "switch_uid_key" : "0x05AC36F02065A293",
+      "vendor_name_key" : "Apple Inc."
+    },
+    {
+      "_items" : [
+        {
+          "_name" : "Thunderbolt 3 Dock",
+          "device_id_key" : "0xDE21",
+          "device_name_key" : "Thunderbolt 3 Dock",
+          "device_revision_key" : "0x1",
+          "mode_key" : "thunderbolt_three",
+          "receptacle_2_tag" : {
+            "current_link_width_key" : "0x1",
+            "current_speed_key" : "Up to 40 Gb/s x1",
+            "lc_version_key" : "0.36.0",
+            "link_status_key" : "0x7",
+            "receptacle_status_key" : "receptacle_no_devices_connected"
+          },
+          "receptacle_upstream_ambiguous_tag" : {
+            "current_link_width_key" : "0x2",
+            "current_speed_key" : "Up to 40 Gb/s x1",
+            "lc_version_key" : "0.36.0",
+            "link_status_key" : "0x2",
+            "receptacle_status_key" : "receptacle_connected"
+          },
+          "route_string_key" : "1",
+          "switch_uid_key" : "0x005A4D010539C800",
+          "switch_version_key" : "35.1",
+          "vendor_id_key" : "0x5A",
+          "vendor_name_key" : "Other World Computing"
+        }
+      ],
+      "_name" : "thunderboltusb4_bus_2",
+      "device_name_key" : "Mac Studio",
+      "domain_uuid_key" : "CCEDDF72-52E4-4367-8D69-CFF5820332BB",
+      "receptacle_1_tag" : {
+        "current_link_width_key" : "0x2",
+        "current_speed_key" : "Up to 40 Gb/s x1",
+        "link_status_key" : "0x2",
+        "receptacle_id_key" : "3",
+        "receptacle_status_key" : "receptacle_connected"
+      },
+      "route_string_key" : "0",
+      "switch_uid_key" : "0x05AC36F02065A292",
+      "vendor_name_key" : "Apple Inc."
+    },
+    {
+      "_name" : "thunderboltusb4_bus_1",
+      "device_name_key" : "Mac Studio",
+      "domain_uuid_key" : "E2CD198E-F1C0-43BF-A60F-A0FE35654BE1",
+      "receptacle_1_tag" : {
+        "current_link_width_key" : "0x1",
+        "current_speed_key" : "Up to 40 Gb/s x1",
+        "link_status_key" : "0x100",
+        "receptacle_id_key" : "2",
+        "receptacle_status_key" : "receptacle_no_devices_connected"
+      },
+      "route_string_key" : "0",
+      "switch_uid_key" : "0x05AC36F02065A291",
+      "vendor_name_key" : "Apple Inc."
+    },
+    {
+      "_items" : [
+        {
+          "_name" : "Echo Express III TB2",
+          "device_id_key" : "0x9",
+          "device_name_key" : "Echo Express III TB2",
+          "device_revision_key" : "0x1",
+          "mode_key" : "thunderbolt_two",
+          "receptacle_2_tag" : {
+            "current_link_width_key" : "0x1",
+            "current_speed_key" : "Up to 20 Gb/s x1",
+            "lc_version_key" : "0.13.0",
+            "link_status_key" : "0x7",
+            "receptacle_status_key" : "receptacle_no_devices_connected"
+          },
+          "receptacle_upstream_ambiguous_tag" : {
+            "cm_asn_key" : "C4M115506ZVF798AL",
+            "cm_version_key" : "1.0.16",
+            "current_link_width_key" : "0x2",
+            "current_speed_key" : "Up to 20 Gb/s x1",
+            "lc_version_key" : "0.13.0",
+            "link_status_key" : "0x2",
+            "receptacle_status_key" : "receptacle_connected"
+          },
+          "route_string_key" : "1",
+          "switch_uid_key" : "0x000800090012BA00",
+          "switch_version_key" : "21.1",
+          "vendor_id_key" : "0x8",
+          "vendor_name_key" : "Sonnet Technologies, Inc."
+        }
+      ],
+      "_name" : "thunderboltusb4_bus_0",
+      "device_name_key" : "Mac Studio",
+      "domain_uuid_key" : "9F1D1A45-440C-49FD-9B51-E1450AFF61D8",
+      "receptacle_1_tag" : {
+        "current_link_width_key" : "0x2",
+        "current_speed_key" : "Up to 20 Gb/s x1",
+        "link_status_key" : "0x2",
+        "receptacle_id_key" : "1",
+        "receptacle_status_key" : "receptacle_connected"
+      },
+      "route_string_key" : "0",
+      "switch_uid_key" : "0x05AC36F02065A290",
+      "vendor_name_key" : "Apple Inc."
+    }
+  ]
+}

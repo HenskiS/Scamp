@@ -1,0 +1,394 @@
+{
+  "SPUSBDataType" : [
+    {
+      "_name" : "USB31Bus",
+      "host_controller" : "AppleT6000USBXHCI"
+    },
+    {
+      "_name" : "USB31Bus",
+      "host_controller" : "AppleT6000USBXHCI"
+    },
+    {
+      "_name" : "USB31Bus",
+      "host_controller" : "AppleT6000USBXHCI"
+    },
+    {
+      "_name" : "USB31Bus",
+      "host_controller" : "AppleT6000USBXHCI"
+    },
+    {
+      "_name" : "USB31Bus",
+      "host_controller" : "AppleT6000USBXHCI"
+    },
+    {
+      "_name" : "USB31Bus",
+      "host_controller" : "AppleT6000USBXHCI"
+    },
+    {
+      "_items" : [
+        {
+          "_name" : "4-Port USB 2.0 Hub",
+          "bcd_device" : "1.04",
+          "bus_power" : "500",
+          "bus_power_used" : "0",
+          "device_speed" : "high_speed",
+          "extra_current_used" : "0",
+          "location_id" : "0x08400000 / 2",
+          "manufacturer" : "Generic",
+          "product_id" : "0x5411",
+          "vendor_id" : "0x0bda  (Realtek Semiconductor Corp.)"
+        },
+        {
+          "_items" : [
+            {
+              "_items" : [
+                {
+                  "_items" : [
+                    {
+                      "_name" : "Magic Keyboard with Numeric Keypad",
+                      "bcd_device" : "8.70",
+                      "bus_power" : "500",
+                      "bus_power_used" : "500",
+                      "device_speed" : "full_speed",
+                      "extra_current_used" : "0",
+                      "location_id" : "0x08314300 / 9",
+                      "manufacturer" : "Apple Inc.",
+                      "product_id" : "0x026c",
+                      "serial_num" : "F0T145700YGJKNCAA",
+                      "vendor_id" : "apple_vendor_id"
+                    },
+                    {
+                      "_items" : [
+                        {
+                          "_name" : "Square Reader S6",
+                          "bcd_device" : "1.00",
+                          "bus_power" : "500",
+                          "bus_power_used" : "500",
+                          "device_speed" : "full_speed",
+                          "extra_current_used" : "0",
+                          "location_id" : "0x08314440 / 13",
+                          "manufacturer" : "Square, Inc.",
+                          "product_id" : "0xa120",
+                          "serial_num" : "724LS09504006913",
+                          "vendor_id" : "0x27a8  (Square, Inc.)"
+                        },
+                        {
+                          "_name" : "Oxygen Pro 61",
+                          "bcd_device" : "1.00",
+                          "bus_power" : "500",
+                          "bus_power_used" : "300",
+                          "device_speed" : "full_speed",
+                          "extra_current_used" : "0",
+                          "location_id" : "0x08314420 / 10",
+                          "manufacturer" : "M-AUDIO",
+                          "product_id" : "0x003a",
+                          "serial_num" : "1234567890",
+                          "vendor_id" : "0x0763  (M-Audio)"
+                        }
+                      ],
+                      "_name" : "USB2.1 Hub",
+                      "bcd_device" : "0.01",
+                      "bus_power" : "500",
+                      "bus_power_used" : "0",
+                      "device_speed" : "full_speed",
+                      "extra_current_used" : "0",
+                      "location_id" : "0x08314400 / 8",
+                      "manufacturer" : "Generic",
+                      "product_id" : "0x5411",
+                      "vendor_id" : "0x0bda  (Realtek Semiconductor Corp.)"
+                    }
+                  ],
+                  "_name" : "USB2.1 Hub",
+                  "bcd_device" : "0.01",
+                  "bus_power" : "500",
+                  "bus_power_used" : "0",
+                  "device_speed" : "full_speed",
+                  "extra_current_used" : "0",
+                  "location_id" : "0x08314000 / 7",
+                  "manufacturer" : "Generic",
+                  "product_id" : "0x5411",
+                  "vendor_id" : "0x0bda  (Realtek Semiconductor Corp.)"
+                }
+              ],
+              "_name" : "USB2.1 Hub",
+              "bcd_device" : "0.01",
+              "bus_power" : "500",
+              "bus_power_used" : "0",
+              "device_speed" : "full_speed",
+              "extra_current_used" : "0",
+              "location_id" : "0x08310000 / 6",
+              "manufacturer" : "Generic",
+              "product_id" : "0x5411",
+              "vendor_id" : "0x0bda  (Realtek Semiconductor Corp.)"
+            }
+          ],
+          "_name" : "hub_device",
+          "bcd_device" : "3.00",
+          "bus_power" : "500",
+          "bus_power_used" : "64",
+          "device_speed" : "full_speed",
+          "extra_current_used" : "0",
+          "location_id" : "0x08300000 / 1",
+          "product_id" : "0x3301",
+          "vendor_id" : "0x03eb  (Atmel Corporation)"
+        },
+        {
+          "_items" : [
+            {
+              "_name" : "ASM1153",
+              "bcd_device" : "1.00",
+              "bus_power" : "900",
+              "bus_power_used" : "0",
+              "device_speed" : "super_speed",
+              "extra_current_used" : "0",
+              "location_id" : "0x08240000 / 5",
+              "manufacturer" : "ASMT",
+              "Media" : [
+                {
+                  "_name" : "WDC WD102PURZ-85BXPY0",
+                  "bsd_name" : "disk5",
+                  "Logical Unit" : 0,
+                  "partition_map_type" : "guid_partition_map_type",
+                  "removable_media" : "no",
+                  "size" : "10 TB",
+                  "size_in_bytes" : 10000831348736,
+                  "smart_status" : "Verified",
+                  "USB Interface" : 0,
+                  "volumes" : [
+                    {
+                      "_name" : "EFI",
+                      "bsd_name" : "disk5s1",
+                      "file_system" : "MS-DOS FAT32",
+                      "iocontent" : "EFI",
+                      "size" : "209.7 MB",
+                      "size_in_bytes" : 209715200,
+                      "volume_uuid" : "0E239BC6-F960-3107-89CF-1C97F78BB46B"
+                    },
+                    {
+                      "_name" : "2021 Project Backup",
+                      "bsd_name" : "disk5s2",
+                      "file_system" : "Journaled HFS+",
+                      "free_space" : "1.04 TB",
+                      "free_space_in_bytes" : 1044369686528,
+                      "iocontent" : "Apple_HFS",
+                      "mount_point" : "/Volumes/2021 Project Backup",
+                      "size" : "10 TB",
+                      "size_in_bytes" : 10000487374848,
+                      "volume_uuid" : "A2D793E2-F319-3F9B-9B0A-0699BB7D8467",
+                      "writable" : "yes"
+                    }
+                  ]
+                }
+              ],
+              "product_id" : "0x55aa",
+              "serial_num" : "VCGNB1WP            ",
+              "vendor_id" : "0x174c  (ASMedia Technology Inc.)"
+            },
+            {
+              "_name" : "USB3.0 Card Reader",
+              "bcd_device" : "15.34",
+              "bus_power" : "900",
+              "bus_power_used" : "896",
+              "device_speed" : "super_speed",
+              "extra_current_used" : "0",
+              "location_id" : "0x08230000 / 4",
+              "manufacturer" : "Generic",
+              "product_id" : "0x0749",
+              "serial_num" : "000000001534",
+              "vendor_id" : "0x05e3  (Genesys Logic, Inc.)"
+            }
+          ],
+          "_name" : "4-Port USB 3.0 Hub",
+          "bcd_device" : "1.04",
+          "bus_power" : "900",
+          "bus_power_used" : "0",
+          "device_speed" : "super_speed",
+          "extra_current_used" : "0",
+          "location_id" : "0x08200000 / 3",
+          "manufacturer" : "Generic",
+          "product_id" : "0x0411",
+          "vendor_id" : "0x0bda  (Realtek Semiconductor Corp.)"
+        }
+      ],
+      "_name" : "USB31Bus",
+      "host_controller" : "AppleEmbeddedUSBXHCIASMedia3142",
+      "pci_device" : "0x2142 ",
+      "pci_revision" : "0x0000 ",
+      "pci_vendor" : "0x1b21 "
+    },
+    {
+      "_name" : "USB31Bus",
+      "host_controller" : "AppleASMediaUSBXHCI",
+      "pci_device" : "0x1242 ",
+      "pci_revision" : "0x0000 ",
+      "pci_vendor" : "0x1b21 "
+    },
+    {
+      "_items" : [
+        {
+          "_name" : "OWC Thunderbolt 3 Dock SD Card Reader",
+          "bcd_device" : "16.16",
+          "bus_power" : "900",
+          "bus_power_used" : "896",
+          "device_speed" : "super_speed",
+          "extra_current_used" : "0",
+          "location_id" : "0x06700000 / 1",
+          "manufacturer" : "Generic",
+          "product_id" : "0x4002",
+          "serial_num" : "000000001616",
+          "vendor_id" : "0x1e91"
+        },
+        {
+          "_name" : "OWC Thunderbolt 3 Audio Device",
+          "bcd_device" : "1.00",
+          "bus_power" : "500",
+          "bus_power_used" : "100",
+          "device_speed" : "full_speed",
+          "extra_current_used" : "0",
+          "location_id" : "0x06400000 / 3",
+          "manufacturer" : "Other World Computing",
+          "product_id" : "0x4001",
+          "vendor_id" : "0x1e91"
+        },
+        {
+          "_name" : "MIDI Express XT",
+          "bcd_device" : "1.32",
+          "bus_power" : "500",
+          "bus_power_used" : "100",
+          "device_speed" : "full_speed",
+          "extra_current_used" : "0",
+          "location_id" : "0x06200000 / 7",
+          "product_id" : "0x0001",
+          "vendor_id" : "0x07fd"
+        },
+        {
+          "_name" : "iLok",
+          "bcd_device" : "0.30",
+          "bus_power" : "500",
+          "bus_power_used" : "40",
+          "device_speed" : "full_speed",
+          "extra_current_used" : "0",
+          "location_id" : "0x06100000 / 2",
+          "manufacturer" : "iLok",
+          "product_id" : "0x5036",
+          "serial_num" : "3FA0812A_657D0F64",
+          "vendor_id" : "0x088e"
+        }
+      ],
+      "_name" : "USB30Bus",
+      "host_controller" : "AppleUSBXHCIFL1100",
+      "pci_device" : "0x1100 ",
+      "pci_revision" : "0x0010 ",
+      "pci_vendor" : "0x1b73 "
+    },
+    {
+      "_items" : [
+        {
+          "_items" : [
+            {
+              "_name" : "hub_device",
+              "bcd_device" : "1.00",
+              "bus_power" : "900",
+              "bus_power_used" : "0",
+              "device_speed" : "super_speed",
+              "extra_current_used" : "0",
+              "location_id" : "0x09810000 / 3",
+              "product_id" : "0x0210",
+              "vendor_id" : "0x045b  (Renesas Electronics Corp.)"
+            }
+          ],
+          "_name" : "hub_device",
+          "bcd_device" : "1.00",
+          "bus_power" : "900",
+          "bus_power_used" : "0",
+          "device_speed" : "super_speed",
+          "extra_current_used" : "0",
+          "location_id" : "0x09800000 / 1",
+          "product_id" : "0x0210",
+          "vendor_id" : "0x045b  (Renesas Electronics Corp.)"
+        },
+        {
+          "_items" : [
+            {
+              "_items" : [
+                {
+                  "_name" : "iLok",
+                  "bcd_device" : "0.10",
+                  "bus_power" : "500",
+                  "bus_power_used" : "100",
+                  "device_speed" : "low_speed",
+                  "extra_current_used" : "0",
+                  "location_id" : "0x09414000 / 9",
+                  "manufacturer" : "iLok",
+                  "product_id" : "0x5036",
+                  "vendor_id" : "0x088e"
+                },
+                {
+                  "_name" : "AudioBox USB 96",
+                  "bcd_device" : "1.12",
+                  "bus_power" : "500",
+                  "bus_power_used" : "500",
+                  "device_speed" : "high_speed",
+                  "extra_current_used" : "0",
+                  "location_id" : "0x09411000 / 8",
+                  "manufacturer" : "PreSonus",
+                  "product_id" : "0x0303",
+                  "serial_num" : "000000000000",
+                  "vendor_id" : "0x194f"
+                }
+              ],
+              "_name" : "hub_device",
+              "bcd_device" : "1.00",
+              "bus_power" : "500",
+              "bus_power_used" : "0",
+              "device_speed" : "high_speed",
+              "extra_current_used" : "0",
+              "location_id" : "0x09410000 / 7",
+              "product_id" : "0x0209",
+              "vendor_id" : "0x045b  (Renesas Electronics Corp.)"
+            }
+          ],
+          "_name" : "hub_device",
+          "bcd_device" : "1.00",
+          "bus_power" : "500",
+          "bus_power_used" : "0",
+          "device_speed" : "high_speed",
+          "extra_current_used" : "0",
+          "location_id" : "0x09400000 / 5",
+          "product_id" : "0x0209",
+          "vendor_id" : "0x045b  (Renesas Electronics Corp.)"
+        },
+        {
+          "_name" : "USB Optical Mouse",
+          "bcd_device" : "1.00",
+          "bus_power" : "500",
+          "bus_power_used" : "100",
+          "device_speed" : "low_speed",
+          "extra_current_used" : "0",
+          "location_id" : "0x09200000 / 17",
+          "manufacturer" : "PixArt",
+          "product_id" : "0x0939",
+          "vendor_id" : "0x04f2  (Chicony Electronics Co., Ltd.)"
+        },
+        {
+          "_name" : "NexiGo N60 FHD Webcam ",
+          "bcd_device" : "2.00",
+          "bus_power" : "500",
+          "bus_power_used" : "200",
+          "device_speed" : "high_speed",
+          "extra_current_used" : "0",
+          "location_id" : "0x09100000 / 2",
+          "manufacturer" : "webcamvendor",
+          "product_id" : "0x60bb",
+          "serial_num" : "Jan 29 2024-10:32:28-N60",
+          "vendor_id" : "0x3443"
+        }
+      ],
+      "_name" : "USB30Bus",
+      "host_controller" : "AppleUSBXHCIFL1100",
+      "pci_device" : "0x1100 ",
+      "pci_revision" : "0x0010 ",
+      "pci_vendor" : "0x1b73 "
+    }
+  ]
+}

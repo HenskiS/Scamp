@@ -1,0 +1,24 @@
+{
+  "name": "@scamp/scanner",
+  "version": "1.0.0",
+  "description": "macOS device scanner for Scamp topology mapping",
+  "type": "module",
+  "main": "cli.js",
+  "bin": {
+    "scamp-scan": "./cli.js"
+  },
+  "scripts": {
+    "scan": "node cli.js"
+  },
+  "dependencies": {
+    "@scamp/shared": "file:../shared"
+  },
+  "keywords": [
+    "scamp",
+    "scanner",
+    "macos",
+    "devices"
+  ],
+  "author": "",
+  "license": "ISC"
+}

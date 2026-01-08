@@ -1,0 +1,1053 @@
+{
+  "version": "1.0",
+  "name": "Dad's Mac Studio Setup",
+  "devices": [
+    {
+      "id": "device-mk5qp4yc-w1jlj",
+      "type": "computer",
+      "label": "Mac",
+      "detectionId": "computer",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "thunderbolt-1",
+          "label": "TB1",
+          "type": "thunderbolt",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "thunderbolt-2",
+          "label": "TB2",
+          "type": "thunderbolt",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "thunderbolt-3",
+          "label": "TB3",
+          "type": "thunderbolt",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "usb-c-1",
+          "label": "USB-C 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "usb-c-2",
+          "label": "USB-C 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "bidirectional"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-shmck",
+      "type": "usb-device",
+      "label": "4-Port USB 2.0 Hub",
+      "detectionId": "usb-4-portusb20hub-0x0bdarealteksemiconductorcorp-0x5411-0x084000002",
+      "position": {
+        "x": 0,
+        "y": -300
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-gruwc",
+      "type": "hub",
+      "label": "hub_device",
+      "detectionId": "usb-hubdevice-0x03ebatmelcorporation-0x3301-0x083000001",
+      "position": {
+        "x": 130.2,
+        "y": -270.3
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Upstream",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "usb-1",
+          "label": "USB 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-2",
+          "label": "USB 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-3",
+          "label": "USB 3",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-4",
+          "label": "USB 4",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-shigb",
+      "type": "hub",
+      "label": "USB2.1 Hub",
+      "detectionId": "usb-usb21hub-0x0bdarealteksemiconductorcorp-0x5411-0x083100006",
+      "position": {
+        "x": 0,
+        "y": -600
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Upstream",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "usb-1",
+          "label": "USB 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-2",
+          "label": "USB 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-3",
+          "label": "USB 3",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-4",
+          "label": "USB 4",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-dt30z",
+      "type": "hub",
+      "label": "USB2.1 Hub",
+      "detectionId": "usb-usb21hub-0x0bdarealteksemiconductorcorp-0x5411-0x083140007",
+      "position": {
+        "x": 0,
+        "y": -900
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Upstream",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "usb-1",
+          "label": "USB 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-2",
+          "label": "USB 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-3",
+          "label": "USB 3",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-4",
+          "label": "USB 4",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-vow0x",
+      "type": "usb-device",
+      "label": "Magic Keyboard with Numeric Keypad",
+      "detectionId": "usb-magickeyboardwithnumerickeypad-applevendorid-0x026c-0x083143009",
+      "position": {
+        "x": 0,
+        "y": -900
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-jy5w6",
+      "type": "hub",
+      "label": "USB2.1 Hub",
+      "detectionId": "usb-usb21hub-0x0bdarealteksemiconductorcorp-0x5411-0x083144008",
+      "position": {
+        "x": 0,
+        "y": 900
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Upstream",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "usb-1",
+          "label": "USB 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-2",
+          "label": "USB 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-3",
+          "label": "USB 3",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-4",
+          "label": "USB 4",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-q33cv",
+      "type": "usb-device",
+      "label": "Square Reader S6",
+      "detectionId": "usb-squarereaders6-0x27a8squareinc-0xa120-0x0831444013",
+      "position": {
+        "x": 0,
+        "y": -900
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-kcjup",
+      "type": "usb-device",
+      "label": "Oxygen Pro 61",
+      "detectionId": "usb-oxygenpro61-0x0763m-audio-0x003a-0x0831442010",
+      "position": {
+        "x": 0,
+        "y": 900
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-ldayv",
+      "type": "hub",
+      "label": "4-Port USB 3.0 Hub",
+      "detectionId": "usb-4-portusb30hub-0x0bdarealteksemiconductorcorp-0x0411-0x082000003",
+      "position": {
+        "x": 234.5,
+        "y": -187
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Upstream",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "usb-1",
+          "label": "USB 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-2",
+          "label": "USB 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-3",
+          "label": "USB 3",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-4",
+          "label": "USB 4",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-o1cgm",
+      "type": "usb-device",
+      "label": "ASM1153",
+      "detectionId": "usb-asm1153-0x174casmediatechnologyinc-0x55aa-0x082400005",
+      "position": {
+        "x": 600,
+        "y": 0
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-agnw9",
+      "type": "usb-device",
+      "label": "USB3.0 Card Reader",
+      "detectionId": "usb-usb30cardreader-0x05e3genesyslogicinc-0x0749-0x082300004",
+      "position": {
+        "x": 0,
+        "y": 600
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-niv9j",
+      "type": "usb-device",
+      "label": "OWC Thunderbolt 3 Dock SD Card Reader",
+      "detectionId": "usb-owcthunderbolt3docksdcardreader-0x1e91-0x4002-0x067000001",
+      "position": {
+        "x": 292.5,
+        "y": -66.8
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-6cam1",
+      "type": "usb-device",
+      "label": "OWC Thunderbolt 3 Audio Device",
+      "detectionId": "usb-owcthunderbolt3audiodevice-0x1e91-0x4001-0x064000003",
+      "position": {
+        "x": 292.5,
+        "y": 66.8
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-6nepo",
+      "type": "usb-device",
+      "label": "MIDI Express XT",
+      "detectionId": "usb-midiexpressxt-0x07fd-0x0001-0x062000007",
+      "position": {
+        "x": 234.5,
+        "y": 187
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-on12x",
+      "type": "usb-device",
+      "label": "iLok",
+      "detectionId": "usb-ilok-0x088e-0x5036-0x061000002",
+      "position": {
+        "x": 130.2,
+        "y": 270.3
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-6035s",
+      "type": "hub",
+      "label": "hub_device",
+      "detectionId": "usb-hubdevice-0x045brenesaselectronicscorp-0x0210-0x098000001",
+      "position": {
+        "x": 0,
+        "y": 300
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Upstream",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "usb-1",
+          "label": "USB 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-2",
+          "label": "USB 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-3",
+          "label": "USB 3",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-4",
+          "label": "USB 4",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-lwrz7",
+      "type": "hub",
+      "label": "hub_device",
+      "detectionId": "usb-hubdevice-0x045brenesaselectronicscorp-0x0209-0x094000005",
+      "position": {
+        "x": -130.2,
+        "y": 270.3
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Upstream",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "usb-1",
+          "label": "USB 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-2",
+          "label": "USB 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-3",
+          "label": "USB 3",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-4",
+          "label": "USB 4",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-ldxo2",
+      "type": "hub",
+      "label": "hub_device",
+      "detectionId": "usb-hubdevice-0x045brenesaselectronicscorp-0x0209-0x094100007",
+      "position": {
+        "x": -600,
+        "y": 0
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Upstream",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "usb-1",
+          "label": "USB 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-2",
+          "label": "USB 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-3",
+          "label": "USB 3",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-4",
+          "label": "USB 4",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yc-v0b0w",
+      "type": "usb-device",
+      "label": "iLok",
+      "detectionId": "usb-ilok-0x088e-0x5036-0x094140009",
+      "position": {
+        "x": 779.4,
+        "y": 450
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yd-gghyp",
+      "type": "usb-device",
+      "label": "AudioBox USB 96",
+      "detectionId": "usb-audioboxusb96-0x194f-0x0303-0x094110008",
+      "position": {
+        "x": -779.4,
+        "y": 450
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yd-nivyj",
+      "type": "usb-device",
+      "label": "USB Optical Mouse",
+      "detectionId": "usb-usbopticalmouse-0x04f2chiconyelectronicscoltd-0x0939-0x0920000017",
+      "position": {
+        "x": -234.5,
+        "y": 187
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yd-l30vj",
+      "type": "usb-device",
+      "label": "NexiGo N60 FHD Webcam ",
+      "detectionId": "usb-nexigon60fhdwebcam-0x3443-0x60bb-0x091000002",
+      "position": {
+        "x": -292.5,
+        "y": 66.8
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yd-hklry",
+      "type": "display",
+      "label": "HDMI EXTENDER",
+      "detectionId": "display-hdmiextender-3423-101",
+      "position": {
+        "x": -234.5,
+        "y": -187
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Input",
+          "type": "thunderbolt",
+          "position": "top",
+          "direction": "in"
+        },
+        {
+          "id": "downstream",
+          "label": "Output",
+          "type": "thunderbolt",
+          "position": "bottom",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yd-ri37v",
+      "type": "display",
+      "label": "HDMI EXTENDER",
+      "detectionId": "display-hdmiextender-3423-101",
+      "position": {
+        "x": -234.5,
+        "y": -187
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Input",
+          "type": "thunderbolt",
+          "position": "top",
+          "direction": "in"
+        },
+        {
+          "id": "downstream",
+          "label": "Output",
+          "type": "thunderbolt",
+          "position": "bottom",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5qp4yd-gi9ae",
+      "type": "network-device",
+      "label": "Ethernet",
+      "detectionId": "net-ethernet-en0",
+      "position": {
+        "x": -130.2,
+        "y": -270.3
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "ethernet",
+          "label": "Ethernet",
+          "type": "ethernet",
+          "position": "right",
+          "direction": "bidirectional"
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn-mk5qp4yd-gyicc",
+      "source": "device-mk5qp4yc-w1jlj",
+      "target": "device-mk5qp4yc-shmck",
+      "sourcePort": "usb-c-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-1e2ad",
+      "source": "device-mk5qp4yc-w1jlj",
+      "target": "device-mk5qp4yc-gruwc",
+      "sourcePort": "usb-c-1",
+      "targetPort": "upstream",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-mta09",
+      "source": "device-mk5qp4yc-gruwc",
+      "target": "device-mk5qp4yc-shigb",
+      "sourcePort": "usb-1",
+      "targetPort": "upstream",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-683yh",
+      "source": "device-mk5qp4yc-shigb",
+      "target": "device-mk5qp4yc-dt30z",
+      "sourcePort": "usb-1",
+      "targetPort": "upstream",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-d5uol",
+      "source": "device-mk5qp4yc-dt30z",
+      "target": "device-mk5qp4yc-vow0x",
+      "sourcePort": "usb-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-nxvks",
+      "source": "device-mk5qp4yc-dt30z",
+      "target": "device-mk5qp4yc-jy5w6",
+      "sourcePort": "usb-1",
+      "targetPort": "upstream",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-t53pc",
+      "source": "device-mk5qp4yc-jy5w6",
+      "target": "device-mk5qp4yc-q33cv",
+      "sourcePort": "usb-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-yxuac",
+      "source": "device-mk5qp4yc-jy5w6",
+      "target": "device-mk5qp4yc-kcjup",
+      "sourcePort": "usb-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-l67mh",
+      "source": "device-mk5qp4yc-w1jlj",
+      "target": "device-mk5qp4yc-ldayv",
+      "sourcePort": "usb-c-1",
+      "targetPort": "upstream",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-6h4fm",
+      "source": "device-mk5qp4yc-ldayv",
+      "target": "device-mk5qp4yc-o1cgm",
+      "sourcePort": "usb-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-o4ov7",
+      "source": "device-mk5qp4yc-ldayv",
+      "target": "device-mk5qp4yc-agnw9",
+      "sourcePort": "usb-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-c1xng",
+      "source": "device-mk5qp4yc-w1jlj",
+      "target": "device-mk5qp4yc-niv9j",
+      "sourcePort": "usb-c-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-aehwc",
+      "source": "device-mk5qp4yc-w1jlj",
+      "target": "device-mk5qp4yc-6cam1",
+      "sourcePort": "usb-c-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-nuk04",
+      "source": "device-mk5qp4yc-w1jlj",
+      "target": "device-mk5qp4yc-6nepo",
+      "sourcePort": "usb-c-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-9aund",
+      "source": "device-mk5qp4yc-w1jlj",
+      "target": "device-mk5qp4yc-on12x",
+      "sourcePort": "usb-c-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-0v0p4",
+      "source": "device-mk5qp4yc-w1jlj",
+      "target": "device-mk5qp4yc-6035s",
+      "sourcePort": "usb-c-1",
+      "targetPort": "upstream",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-djn00",
+      "source": "device-mk5qp4yc-w1jlj",
+      "target": "device-mk5qp4yc-lwrz7",
+      "sourcePort": "usb-c-1",
+      "targetPort": "upstream",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-3hgmw",
+      "source": "device-mk5qp4yc-lwrz7",
+      "target": "device-mk5qp4yc-ldxo2",
+      "sourcePort": "usb-1",
+      "targetPort": "upstream",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-6u8xs",
+      "source": "device-mk5qp4yc-ldxo2",
+      "target": "device-mk5qp4yc-v0b0w",
+      "sourcePort": "usb-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-vb6lf",
+      "source": "device-mk5qp4yc-ldxo2",
+      "target": "device-mk5qp4yd-gghyp",
+      "sourcePort": "usb-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-r2p0k",
+      "source": "device-mk5qp4yc-w1jlj",
+      "target": "device-mk5qp4yd-nivyj",
+      "sourcePort": "usb-c-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-0akqv",
+      "source": "device-mk5qp4yc-w1jlj",
+      "target": "device-mk5qp4yd-l30vj",
+      "sourcePort": "usb-c-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-hey0y",
+      "source": "device-mk5qp4yc-w1jlj",
+      "target": "device-mk5qp4yd-ri37v",
+      "sourcePort": "thunderbolt-1",
+      "targetPort": "upstream",
+      "type": "displayport",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-lc6c9",
+      "source": "device-mk5qp4yc-w1jlj",
+      "target": "device-mk5qp4yd-ri37v",
+      "sourcePort": "thunderbolt-1",
+      "targetPort": "upstream",
+      "type": "displayport",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5qp4yd-n8e6f",
+      "source": "device-mk5qp4yc-w1jlj",
+      "target": "device-mk5qp4yd-gi9ae",
+      "sourcePort": "thunderbolt-1",
+      "targetPort": "ethernet",
+      "type": "ethernet",
+      "label": ""
+    }
+  ],
+  "connectionTypes": [
+    {
+      "id": "usb",
+      "name": "USB",
+      "color": "#4169e1"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Thunderbolt",
+      "color": "#f4c430"
+    },
+    {
+      "id": "ethernet",
+      "name": "Ethernet",
+      "color": "#32cd32"
+    },
+    {
+      "id": "displayport",
+      "name": "DisplayPort",
+      "color": "#9370db"
+    },
+    {
+      "id": "hdmi",
+      "name": "HDMI",
+      "color": "#ff6347"
+    }
+  ]
+}

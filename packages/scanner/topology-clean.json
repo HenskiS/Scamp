@@ -1,0 +1,335 @@
+{
+  "version": "1.0",
+  "name": "Scanned Setup 1/8/2026",
+  "devices": [
+    {
+      "id": "device-mk5pi6er-m9oa9",
+      "type": "computer",
+      "label": "Mac",
+      "detectionId": "computer",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "thunderbolt-1",
+          "label": "TB1",
+          "type": "thunderbolt",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "thunderbolt-2",
+          "label": "TB2",
+          "type": "thunderbolt",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "thunderbolt-3",
+          "label": "TB3",
+          "type": "thunderbolt",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "usb-c-1",
+          "label": "USB-C 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "usb-c-2",
+          "label": "USB-C 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "bidirectional"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5pi6er-59umt",
+      "type": "hub",
+      "label": "hub_device",
+      "detectionId": "usb-hubdevice-0x05e3genesyslogicinc-0x0610",
+      "position": {
+        "x": 0,
+        "y": -300
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Upstream",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "usb-1",
+          "label": "USB 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-2",
+          "label": "USB 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-3",
+          "label": "USB 3",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        },
+        {
+          "id": "usb-4",
+          "label": "USB 4",
+          "type": "usb",
+          "position": "right",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5pi6er-o29on",
+      "type": "usb-device",
+      "label": "K3",
+      "detectionId": "usb-k3-0x2972-0x0047",
+      "position": {
+        "x": 0,
+        "y": -600
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5pi6er-1kxkq",
+      "type": "usb-device",
+      "label": "G815 RGB MECHANICAL GAMING KEYBOARD",
+      "detectionId": "usb-g815rgbmechanicalgamingkeyboard-0x046dlogitechinc-0xc33f",
+      "position": {
+        "x": 519.6,
+        "y": 300
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5pi6er-lpkrh",
+      "type": "usb-device",
+      "label": "Gaming Mouse G502",
+      "detectionId": "usb-gamingmouseg502-0x046dlogitechinc-0xc332",
+      "position": {
+        "x": -519.6,
+        "y": 300
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5pi6er-ms41t",
+      "type": "display",
+      "label": "Optix G27C2",
+      "detectionId": "display-optixg27c2-3669-1462",
+      "position": {
+        "x": 300,
+        "y": 0
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Input",
+          "type": "thunderbolt",
+          "position": "top",
+          "direction": "in"
+        },
+        {
+          "id": "downstream",
+          "label": "Output",
+          "type": "thunderbolt",
+          "position": "bottom",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5pi6er-4rz07",
+      "type": "network-device",
+      "label": "Ethernet",
+      "detectionId": "net-ethernet",
+      "position": {
+        "x": 0,
+        "y": 300
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "ethernet",
+          "label": "Ethernet",
+          "type": "ethernet",
+          "position": "right",
+          "direction": "bidirectional"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5pi6er-t7f55",
+      "type": "network-device",
+      "label": "USB 10/100/1000 LAN",
+      "detectionId": "net-usb101001000lan",
+      "position": {
+        "x": -300,
+        "y": 0
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "ethernet",
+          "label": "Ethernet",
+          "type": "ethernet",
+          "position": "right",
+          "direction": "bidirectional"
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn-mk5pi6er-2jzt9",
+      "source": "device-mk5pi6er-m9oa9",
+      "target": "device-mk5pi6er-59umt",
+      "sourcePort": "usb-c-1",
+      "targetPort": "upstream",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5pi6er-5q05b",
+      "source": "device-mk5pi6er-59umt",
+      "target": "device-mk5pi6er-o29on",
+      "sourcePort": "usb-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5pi6es-7dac6",
+      "source": "device-mk5pi6er-59umt",
+      "target": "device-mk5pi6er-1kxkq",
+      "sourcePort": "usb-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5pi6es-5gcw2",
+      "source": "device-mk5pi6er-59umt",
+      "target": "device-mk5pi6er-lpkrh",
+      "sourcePort": "usb-1",
+      "targetPort": "usb",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5pi6es-k974s",
+      "source": "device-mk5pi6er-m9oa9",
+      "target": "device-mk5pi6er-ms41t",
+      "sourcePort": "thunderbolt-1",
+      "targetPort": "upstream",
+      "type": "displayport",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5pi6es-jjfpa",
+      "source": "device-mk5pi6er-m9oa9",
+      "target": "device-mk5pi6er-4rz07",
+      "sourcePort": "thunderbolt-1",
+      "targetPort": "ethernet",
+      "type": "ethernet",
+      "label": ""
+    },
+    {
+      "id": "conn-mk5pi6es-ygv6l",
+      "source": "device-mk5pi6er-m9oa9",
+      "target": "device-mk5pi6er-t7f55",
+      "sourcePort": "thunderbolt-1",
+      "targetPort": "ethernet",
+      "type": "ethernet",
+      "label": ""
+    }
+  ],
+  "connectionTypes": [
+    {
+      "id": "usb",
+      "name": "USB",
+      "color": "#4169e1"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Thunderbolt",
+      "color": "#f4c430"
+    },
+    {
+      "id": "ethernet",
+      "name": "Ethernet",
+      "color": "#32cd32"
+    },
+    {
+      "id": "displayport",
+      "name": "DisplayPort",
+      "color": "#9370db"
+    },
+    {
+      "id": "hdmi",
+      "name": "HDMI",
+      "color": "#ff6347"
+    }
+  ]
+}

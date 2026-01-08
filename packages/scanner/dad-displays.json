@@ -1,0 +1,48 @@
+{
+  "SPDisplaysDataType" : [
+    {
+      "_name" : "Apple M1 Ultra",
+      "spdisplays_mtlgpufamilysupport" : "spdisplays_metal3",
+      "spdisplays_ndrvs" : [
+        {
+          "_name" : "HDMI EXTENDER",
+          "_spdisplays_display-product-id" : "101",
+          "_spdisplays_display-serial-number" : "4030201",
+          "_spdisplays_display-vendor-id" : "3423",
+          "_spdisplays_display-week" : "1",
+          "_spdisplays_display-year" : "2014",
+          "_spdisplays_displayID" : "1",
+          "_spdisplays_pixels" : "1920 x 1080",
+          "_spdisplays_resolution" : "1920 x 1080 @ 60.00Hz",
+          "spdisplays_main" : "spdisplays_yes",
+          "spdisplays_mirror" : "spdisplays_off",
+          "spdisplays_online" : "spdisplays_yes",
+          "spdisplays_pixelresolution" : "spdisplays_1080p",
+          "spdisplays_resolution" : "1920 x 1080 @ 60.00Hz",
+          "spdisplays_rotation" : "spdisplays_supported"
+        },
+        {
+          "_name" : "HDMI EXTENDER",
+          "_spdisplays_display-product-id" : "101",
+          "_spdisplays_display-serial-number" : "4030201",
+          "_spdisplays_display-vendor-id" : "3423",
+          "_spdisplays_display-week" : "1",
+          "_spdisplays_display-year" : "2014",
+          "_spdisplays_displayID" : "6",
+          "_spdisplays_pixels" : "1920 x 1080",
+          "_spdisplays_resolution" : "1920 x 1080 @ 60.00Hz",
+          "spdisplays_mirror" : "spdisplays_off",
+          "spdisplays_online" : "spdisplays_yes",
+          "spdisplays_pixelresolution" : "spdisplays_1080p",
+          "spdisplays_resolution" : "1920 x 1080 @ 60.00Hz",
+          "spdisplays_rotation" : "spdisplays_supported"
+        }
+      ],
+      "spdisplays_vendor" : "sppci_vendor_Apple",
+      "sppci_bus" : "spdisplays_builtin",
+      "sppci_cores" : "48",
+      "sppci_device_type" : "spdisplays_gpu",
+      "sppci_model" : "Apple M1 Ultra"
+    }
+  ]
+}

@@ -6,7 +6,8 @@
   "main": "./index.js",
   "exports": {
     ".": "./index.js",
-    "./styles": "./src/styles/theme.css"
+    "./styles": "./src/styles/theme.css",
+    "./utils": "./src/utils/fileFormat.js"
   },
   "scripts": {
     "build": "vite build",

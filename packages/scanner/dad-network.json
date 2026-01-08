@@ -1,0 +1,337 @@
+{
+  "SPNetworkDataType" : [
+    {
+      "_name" : "Ethernet",
+      "dhcp" : {
+        "dhcp_domain_name_servers" : "192.168.1.1",
+        "dhcp_lease_duration" : 0,
+        "dhcp_message_type" : "0x05",
+        "dhcp_routers" : "192.168.1.1",
+        "dhcp_server_identifier" : "192.168.1.1",
+        "dhcp_subnet_mask" : "255.255.255.0"
+      },
+      "DNS" : {
+        "ServerAddresses" : [
+          "192.168.1.1"
+        ]
+      },
+      "Ethernet" : {
+        "MAC Address" : "9c:76:0e:66:aa:9c",
+        "MediaOptions" : [
+          "full-duplex",
+          "flow-control",
+          "energy-efficient-ethernet"
+        ],
+        "MediaSubType" : "10Gbase-T"
+      },
+      "hardware" : "Ethernet",
+      "interface" : "en0",
+      "ip_address" : [
+        "192.168.1.184"
+      ],
+      "IPv4" : {
+        "AdditionalRoutes" : [
+          {
+            "DestinationAddress" : "192.168.1.184",
+            "SubnetMask" : "255.255.255.255"
+          },
+          {
+            "DestinationAddress" : "169.254.0.0",
+            "SubnetMask" : "255.255.0.0"
+          }
+        ],
+        "Addresses" : [
+          "192.168.1.184"
+        ],
+        "ARPResolvedHardwareAddress" : "e4:90:7e:f4:71:68",
+        "ARPResolvedIPAddress" : "192.168.1.1",
+        "ConfigMethod" : "DHCP",
+        "ConfirmedInterfaceName" : "en0",
+        "InterfaceName" : "en0",
+        "NetworkSignature" : "IPv4.Router=192.168.1.1;IPv4.RouterHardwareAddress=e4:90:7e:f4:71:68",
+        "Router" : "192.168.1.1",
+        "SubnetMasks" : [
+          "255.255.255.0"
+        ]
+      },
+      "IPv6" : {
+        "ConfigMethod" : "Automatic"
+      },
+      "Proxies" : {
+        "ExceptionsList" : [
+          "*.local",
+          "169.254/16"
+        ],
+        "FTPPassive" : "yes"
+      },
+      "sleep_proxies" : [
+        {
+          "_name" : "1 Apple TV",
+          "MarginalPower" : 60,
+          "Metric" : 703560,
+          "Portability" : 35,
+          "TotalPower" : 63,
+          "Type" : 70
+        }
+      ],
+      "spnetwork_service_order" : 0,
+      "type" : "Ethernet"
+    },
+    {
+      "_name" : "Ethernet Adapter (en9)",
+      "Ethernet" : {
+        "MAC Address" : "7a:4c:b4:f6:01:70",
+        "MediaOptions" : [
+
+        ],
+        "MediaSubType" : "none"
+      },
+      "hardware" : "Ethernet",
+      "interface" : "en9",
+      "IPv4" : {
+        "ConfigMethod" : "DHCP"
+      },
+      "IPv6" : {
+        "ConfigMethod" : "Automatic"
+      },
+      "Proxies" : {
+        "ExceptionsList" : [
+          "*.local",
+          "169.254/16"
+        ],
+        "FTPPassive" : "yes"
+      },
+      "spnetwork_service_order" : 1,
+      "type" : "Ethernet"
+    },
+    {
+      "_name" : "Ethernet Adapter (en10)",
+      "Ethernet" : {
+        "MAC Address" : "7a:4c:b4:f6:01:71",
+        "MediaOptions" : [
+
+        ],
+        "MediaSubType" : "none"
+      },
+      "hardware" : "Ethernet",
+      "interface" : "en10",
+      "IPv4" : {
+        "ConfigMethod" : "DHCP"
+      },
+      "IPv6" : {
+        "ConfigMethod" : "Automatic"
+      },
+      "Proxies" : {
+        "ExceptionsList" : [
+          "*.local",
+          "169.254/16"
+        ],
+        "FTPPassive" : "yes"
+      },
+      "spnetwork_service_order" : 2,
+      "type" : "Ethernet"
+    },
+    {
+      "_name" : "Ethernet Adapter (en11)",
+      "Ethernet" : {
+        "MAC Address" : "7a:4c:b4:f6:01:72",
+        "MediaOptions" : [
+
+        ],
+        "MediaSubType" : "none"
+      },
+      "hardware" : "Ethernet",
+      "interface" : "en11",
+      "IPv4" : {
+        "ConfigMethod" : "DHCP"
+      },
+      "IPv6" : {
+        "ConfigMethod" : "Automatic"
+      },
+      "Proxies" : {
+        "ExceptionsList" : [
+          "*.local",
+          "169.254/16"
+        ],
+        "FTPPassive" : "yes"
+      },
+      "spnetwork_service_order" : 3,
+      "type" : "Ethernet"
+    },
+    {
+      "_name" : "Ethernet Adapter (en12)",
+      "Ethernet" : {
+        "MAC Address" : "7a:4c:b4:f6:01:73",
+        "MediaOptions" : [
+
+        ],
+        "MediaSubType" : "none"
+      },
+      "hardware" : "Ethernet",
+      "interface" : "en12",
+      "IPv4" : {
+        "ConfigMethod" : "DHCP"
+      },
+      "IPv6" : {
+        "ConfigMethod" : "Automatic"
+      },
+      "Proxies" : {
+        "ExceptionsList" : [
+          "*.local",
+          "169.254/16"
+        ],
+        "FTPPassive" : "yes"
+      },
+      "spnetwork_service_order" : 4,
+      "type" : "Ethernet"
+    },
+    {
+      "_name" : "Ethernet Adapter (en13)",
+      "Ethernet" : {
+        "MAC Address" : "7a:4c:b4:f6:01:74",
+        "MediaOptions" : [
+
+        ],
+        "MediaSubType" : "none"
+      },
+      "hardware" : "Ethernet",
+      "interface" : "en13",
+      "IPv4" : {
+        "ConfigMethod" : "DHCP"
+      },
+      "IPv6" : {
+        "ConfigMethod" : "Automatic"
+      },
+      "Proxies" : {
+        "ExceptionsList" : [
+          "*.local",
+          "169.254/16"
+        ],
+        "FTPPassive" : "yes"
+      },
+      "spnetwork_service_order" : 5,
+      "type" : "Ethernet"
+    },
+    {
+      "_name" : "Ethernet Adapter (en14)",
+      "Ethernet" : {
+        "MAC Address" : "7a:4c:b4:f6:01:75",
+        "MediaOptions" : [
+
+        ],
+        "MediaSubType" : "none"
+      },
+      "hardware" : "Ethernet",
+      "interface" : "en14",
+      "IPv4" : {
+        "ConfigMethod" : "DHCP"
+      },
+      "IPv6" : {
+        "ConfigMethod" : "Automatic"
+      },
+      "Proxies" : {
+        "ExceptionsList" : [
+          "*.local",
+          "169.254/16"
+        ],
+        "FTPPassive" : "yes"
+      },
+      "spnetwork_service_order" : 6,
+      "type" : "Ethernet"
+    },
+    {
+      "_name" : "USB 10/100/1000 LAN",
+      "hardware" : "Ethernet",
+      "interface" : "en16",
+      "IPv4" : {
+        "ConfigMethod" : "DHCP"
+      },
+      "IPv6" : {
+        "ConfigMethod" : "Automatic"
+      },
+      "Proxies" : {
+        "ExceptionsList" : [
+          "*.local",
+          "169.254/16"
+        ],
+        "FTPPassive" : "yes"
+      },
+      "spnetwork_service_order" : 7,
+      "type" : "Ethernet"
+    },
+    {
+      "_name" : "Thunderbolt Ethernet Slot 2",
+      "Ethernet" : {
+        "MAC Address" : "80:6d:97:04:28:ed",
+        "MediaOptions" : [
+
+        ],
+        "MediaSubType" : "none"
+      },
+      "hardware" : "Ethernet",
+      "interface" : "en8",
+      "IPv4" : {
+        "ConfigMethod" : "DHCP"
+      },
+      "IPv6" : {
+        "ConfigMethod" : "Automatic"
+      },
+      "Proxies" : {
+        "ExceptionsList" : [
+          "*.local",
+          "169.254/16"
+        ],
+        "FTPPassive" : "yes"
+      },
+      "spnetwork_service_order" : 8,
+      "type" : "Ethernet"
+    },
+    {
+      "_name" : "Wi-Fi",
+      "Ethernet" : {
+        "MAC Address" : "9c:76:0e:6f:3d:af",
+        "MediaOptions" : [
+
+        ],
+        "MediaSubType" : "autoselect"
+      },
+      "hardware" : "AirPort",
+      "interface" : "en1",
+      "IPv4" : {
+        "ConfigMethod" : "DHCP"
+      },
+      "IPv6" : {
+        "ConfigMethod" : "Automatic"
+      },
+      "Proxies" : {
+        "ExceptionsList" : [
+          "*.local",
+          "169.254/16"
+        ],
+        "FTPPassive" : "yes"
+      },
+      "spnetwork_service_order" : 9,
+      "type" : "AirPort"
+    },
+    {
+      "_name" : "Thunderbolt Bridge",
+      "hardware" : "Ethernet",
+      "interface" : "bridge0",
+      "IPv4" : {
+        "ConfigMethod" : "DHCP"
+      },
+      "IPv6" : {
+        "ConfigMethod" : "Automatic"
+      },
+      "Proxies" : {
+        "ExceptionsList" : [
+          "*.local",
+          "169.254/16"
+        ],
+        "FTPPassive" : "yes"
+      },
+      "spnetwork_service_order" : 10,
+      "type" : "Ethernet"
+    }
+  ]
+}
