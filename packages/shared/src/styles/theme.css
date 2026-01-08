@@ -1,0 +1,65 @@
+:root {
+  /* Background colors */
+  --color-bg-primary: #f0f0f0;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #e8e8e8;
+
+  /* Border colors */
+  --color-border: #cccccc;
+  --color-border-light: #dddddd;
+  --color-border-dark: #999999;
+
+  /* Text colors */
+  --color-text-primary: #000000;
+  --color-text-secondary: #666666;
+  --color-text-tertiary: #999999;
+
+  /* Connection type colors */
+  --color-connection-usb: #4169e1; /* Blue for USB */
+  --color-connection-thunderbolt: #f4c430; /* Gold/Yellow for Thunderbolt */
+  --color-connection-ethernet: #32cd32;
+  --color-connection-displayport: #9370db;
+  --color-connection-hdmi: #ff6347;
+
+  /* Status colors */
+  --color-status-connected: #32cd32;
+  --color-status-disconnected: #ff4444;
+  --color-status-stable: #cccccc;
+
+  /* Fonts */
+  --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-mono: 'Courier New', 'Consolas', monospace;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Sizes */
+  --border-radius: 4px;
+  --border-width: 1px;
+}
+
+/* Old-school utility aesthetic base styles */
+body {
+  font-family: var(--font-main);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* Simple, functional panels */
+.panel {
+  background-color: var(--color-bg-secondary);
+  border: var(--border-width) solid var(--color-border);
+}
+
+/* Monospace for technical info */
+.mono {
+  font-family: var(--font-mono);
+}

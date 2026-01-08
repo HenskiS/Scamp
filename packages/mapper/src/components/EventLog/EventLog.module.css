@@ -1,0 +1,70 @@
+.eventLog {
+  background-color: var(--color-bg-secondary, #ffffff);
+  border-top: 2px solid var(--color-border-dark, #999999);
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: var(--color-bg-tertiary, #e8e8e8);
+  border-bottom: 1px solid var(--color-border, #cccccc);
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-primary, #000000);
+}
+
+.count {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--color-text-secondary, #666666);
+}
+
+.eventList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.emptyState {
+  padding: 12px;
+  text-align: center;
+  color: var(--color-text-secondary, #666666);
+  font-style: italic;
+}
+
+.eventItem {
+  display: flex;
+  gap: 12px;
+  padding: 3px 12px;
+  border-bottom: 1px solid var(--color-bg-tertiary, #e8e8e8);
+}
+
+.eventItem:hover {
+  background-color: var(--color-bg-tertiary, #e8e8e8);
+}
+
+.timestamp {
+  color: var(--color-text-secondary, #666666);
+  min-width: 75px;
+}
+
+.eventType {
+  min-width: 120px;
+  font-weight: 600;
+  color: var(--color-connection-thunderbolt, #4169e1);
+}
+
+.eventMessage {
+  color: var(--color-text-primary, #000000);
+  flex: 1;
+}

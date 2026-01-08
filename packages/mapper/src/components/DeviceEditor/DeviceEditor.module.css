@@ -1,0 +1,274 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.dialog {
+  background-color: var(--color-bg-secondary, #ffffff);
+  border: 2px solid var(--color-border-dark, #999999);
+  width: 600px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border, #cccccc);
+  background-color: var(--color-bg-tertiary, #e8e8e8);
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-text-secondary, #666666);
+  padding: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.closeButton:hover {
+  color: var(--color-text-primary, #000000);
+}
+
+.content {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary, #000000);
+}
+
+.input {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 13px;
+  font-family: var(--font-main);
+  border: 1px solid var(--color-border, #cccccc);
+  background-color: var(--color-bg-secondary, #ffffff);
+}
+
+.readOnly {
+  display: inline-block;
+  padding: 6px 8px;
+  font-size: 13px;
+  font-family: var(--font-mono);
+  background-color: var(--color-bg-tertiary, #e8e8e8);
+  color: var(--color-text-secondary, #666666);
+  border: 1px solid var(--color-border, #cccccc);
+}
+
+.portsSection {
+  margin-top: 24px;
+}
+
+.portsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.portsHeader label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary, #000000);
+}
+
+.addButton {
+  padding: 4px 12px;
+  font-size: 12px;
+  font-family: var(--font-main);
+  background-color: var(--color-bg-secondary, #ffffff);
+  border: 1px solid var(--color-border, #cccccc);
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background-color: var(--color-bg-tertiary, #e8e8e8);
+}
+
+.portsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.portRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.portInput {
+  flex: 2;
+  padding: 6px 8px;
+  font-size: 12px;
+  font-family: var(--font-main);
+  border: 1px solid var(--color-border, #cccccc);
+}
+
+.portSelect {
+  flex: 1;
+  padding: 6px;
+  font-size: 12px;
+  font-family: var(--font-main);
+  border: 1px solid var(--color-border, #cccccc);
+  background-color: var(--color-bg-secondary, #ffffff);
+}
+
+.removeButton {
+  background: none;
+  border: 1px solid var(--color-border, #cccccc);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-text-secondary, #666666);
+  padding: 4px 8px;
+  width: 28px;
+  height: 28px;
+}
+
+.removeButton:hover {
+  background-color: #ffeeee;
+  color: #cc0000;
+  border-color: #cc0000;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--color-border, #cccccc);
+  background-color: var(--color-bg-tertiary, #e8e8e8);
+}
+
+.footerRight {
+  display: flex;
+  gap: 8px;
+}
+
+.cancelButton,
+.saveButton {
+  padding: 6px 20px;
+  font-size: 13px;
+  font-family: var(--font-main);
+  border: 1px solid var(--color-border, #cccccc);
+  cursor: pointer;
+}
+
+.cancelButton {
+  background-color: var(--color-bg-secondary, #ffffff);
+}
+
+.cancelButton:hover {
+  background-color: var(--color-bg-tertiary, #e8e8e8);
+}
+
+.saveButton {
+  background-color: var(--color-connection-thunderbolt, #4169e1);
+  color: #ffffff;
+  border-color: var(--color-connection-thunderbolt, #4169e1);
+  font-weight: 600;
+}
+
+.saveButton:hover {
+  background-color: #3155c9;
+}
+
+.deleteButton {
+  padding: 6px 20px;
+  font-size: 13px;
+  font-family: var(--font-main);
+  background-color: var(--color-bg-secondary, #ffffff);
+  border: 1px solid #cc0000;
+  color: #cc0000;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.deleteButton:hover {
+  background-color: #cc0000;
+  color: #ffffff;
+}
+
+.connectionsSection {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border, #cccccc);
+}
+
+.connectionsSection label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary, #000000);
+}
+
+.connectionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.connectionItem {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 8px;
+  background-color: var(--color-bg-tertiary, #e8e8e8);
+  border: 1px solid var(--color-border, #cccccc);
+  font-size: 12px;
+}
+
+.connectionType {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--color-connection-thunderbolt, #4169e1);
+  min-width: 80px;
+  text-transform: uppercase;
+}
+
+.connectionDetail {
+  flex: 1;
+  color: var(--color-text-primary, #000000);
+}
+
+.connectionLabel {
+  font-style: italic;
+  color: var(--color-text-secondary, #666666);
+}

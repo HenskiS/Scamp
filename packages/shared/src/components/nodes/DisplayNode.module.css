@@ -1,0 +1,5 @@
+.displayNode {
+  min-width: 140px;
+  border-color: var(--color-connection-displayport, #9370db);
+  border-width: 2px;
+}

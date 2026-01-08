@@ -1,0 +1,290 @@
+{
+  "version": "1.0",
+  "name": "Demo 2 Mac Monitor Hub",
+  "devices": [
+    {
+      "id": "device-mk51fn2j-zc77q",
+      "type": "computer",
+      "label": "Mac",
+      "detectionId": null,
+      "position": {
+        "x": 213.42445759849224,
+        "y": 288.88284166433976
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "thunderbolt-1",
+          "label": "TB1",
+          "type": "thunderbolt",
+          "position": "left"
+        },
+        {
+          "id": "thunderbolt-2",
+          "label": "TB2",
+          "type": "thunderbolt",
+          "position": "left"
+        },
+        {
+          "id": "thunderbolt-3",
+          "label": "TB3",
+          "type": "thunderbolt",
+          "position": "left"
+        },
+        {
+          "id": "usb-c-1",
+          "label": "USB-C 1",
+          "type": "usb",
+          "position": "right"
+        },
+        {
+          "id": "usb-c-2",
+          "label": "USB-C 2",
+          "type": "usb",
+          "position": "right"
+        },
+        {
+          "id": "port-mk51fvhb-we7p6",
+          "label": "HDMI",
+          "type": "hdmi",
+          "position": "top",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk51g7az-fmr15",
+      "type": "adapter",
+      "label": "HDMI>Eth",
+      "detectionId": null,
+      "position": {
+        "x": 179.63016429812706,
+        "y": 109.74213231545781
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "input",
+          "label": "In",
+          "type": "hdmi",
+          "position": "bottom",
+          "direction": "in"
+        },
+        {
+          "id": "output",
+          "label": "Out",
+          "type": "ethernet",
+          "position": "top",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk51h2zv-u2ehg",
+      "type": "adapter",
+      "label": "Eth>HDMI",
+      "detectionId": null,
+      "position": {
+        "x": 197.52850329223295,
+        "y": -46.94694032129965
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "input",
+          "label": "In",
+          "type": "ethernet",
+          "position": "bottom",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "output",
+          "label": "Out",
+          "type": "hdmi",
+          "position": "top",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk51hqty-joqbd",
+      "type": "display",
+      "label": "Center monitor",
+      "detectionId": null,
+      "position": {
+        "x": 178.58958757303535,
+        "y": -194.7872082062143
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Input",
+          "type": "hdmi",
+          "position": "bottom",
+          "direction": "in"
+        }
+      ]
+    },
+    {
+      "id": "device-mk547p5k-30oq4",
+      "type": "hub",
+      "label": "Hub1",
+      "detectionId": null,
+      "position": {
+        "x": 416.15482914991077,
+        "y": 221.68047419557917
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Upstream",
+          "type": "usb",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "usb-1",
+          "label": "USB 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "usb-2",
+          "label": "USB 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "usb-3",
+          "label": "USB 3",
+          "type": "usb",
+          "position": "right",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "usb-4",
+          "label": "USB 4",
+          "type": "usb",
+          "position": "right",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "port-mk54mahz-55ur0",
+          "label": "HDMI",
+          "type": "hdmi",
+          "position": "top",
+          "direction": "bidirectional"
+        }
+      ]
+    },
+    {
+      "id": "device-mk5498o6-tog7m",
+      "type": "usb-device",
+      "label": "iLok 1",
+      "detectionId": null,
+      "position": {
+        "x": 625.6954285823673,
+        "y": 155.55983800124187
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "bidirectional"
+        }
+      ]
+    },
+    {
+      "id": "device-mk54j7s9-grqhe",
+      "type": "usb-device",
+      "label": "Thumb Drive 32GB",
+      "detectionId": null,
+      "position": {
+        "x": 636.5661070396335,
+        "y": 253.76570365888034
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "bidirectional"
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn-mk51i8bv-db679",
+      "source": "device-mk51hqty-joqbd",
+      "target": "device-mk51h2zv-u2ehg",
+      "sourcePort": "upstream",
+      "targetPort": "output",
+      "type": "hdmi",
+      "label": ""
+    },
+    {
+      "id": "conn-mk51idni-5bklb",
+      "source": "device-mk51g7az-fmr15",
+      "target": "device-mk51h2zv-u2ehg",
+      "sourcePort": "output",
+      "targetPort": "input",
+      "type": "ethernet",
+      "label": ""
+    },
+    {
+      "id": "conn-mk521roh-evpv3",
+      "source": "device-mk51h2zv-u2ehg",
+      "target": "device-mk51hqty-joqbd",
+      "sourcePort": "output",
+      "targetPort": "upstream",
+      "type": "hdmi",
+      "label": ""
+    },
+    {
+      "id": "conn-mk548h41-gyqec",
+      "source": "device-mk51fn2j-zc77q",
+      "target": "device-mk547p5k-30oq4",
+      "sourcePort": "usb-c-1",
+      "targetPort": "upstream",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk549jz7-hetnm",
+      "source": "device-mk5498o6-tog7m",
+      "target": "device-mk547p5k-30oq4",
+      "sourcePort": "usb",
+      "targetPort": "usb-1",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk54jhed-bj2ky",
+      "source": "device-mk54j7s9-grqhe",
+      "target": "device-mk547p5k-30oq4",
+      "sourcePort": "usb",
+      "targetPort": "usb-2",
+      "type": "usb",
+      "label": ""
+    },
+    {
+      "id": "conn-mk54mk16-jm53a",
+      "source": "device-mk547p5k-30oq4",
+      "target": "device-mk51g7az-fmr15",
+      "sourcePort": "port-mk54mahz-55ur0",
+      "targetPort": "input",
+      "type": "hdmi",
+      "label": ""
+    }
+  ]
+}

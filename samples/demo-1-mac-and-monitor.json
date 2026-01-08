@@ -1,0 +1,168 @@
+{
+  "version": "1.0",
+  "name": "Demo 1 Mac and Monitor",
+  "devices": [
+    {
+      "id": "device-mk51fn2j-zc77q",
+      "type": "computer",
+      "label": "Mac",
+      "detectionId": null,
+      "position": {
+        "x": 160.64959813673104,
+        "y": 279.62409439034656
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "thunderbolt-1",
+          "label": "TB1",
+          "type": "thunderbolt",
+          "position": "left"
+        },
+        {
+          "id": "thunderbolt-2",
+          "label": "TB2",
+          "type": "thunderbolt",
+          "position": "left"
+        },
+        {
+          "id": "thunderbolt-3",
+          "label": "TB3",
+          "type": "thunderbolt",
+          "position": "left"
+        },
+        {
+          "id": "usb-c-1",
+          "label": "USB-C 1",
+          "type": "usb",
+          "position": "right"
+        },
+        {
+          "id": "usb-c-2",
+          "label": "USB-C 2",
+          "type": "usb",
+          "position": "right"
+        },
+        {
+          "id": "port-mk51fvhb-we7p6",
+          "label": "HDMI",
+          "type": "hdmi",
+          "position": "top",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk51g7az-fmr15",
+      "type": "adapter",
+      "label": "HDMI>Eth",
+      "detectionId": null,
+      "position": {
+        "x": 245.05016097956747,
+        "y": 117.20175445605257
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "input",
+          "label": "In",
+          "type": "hdmi",
+          "position": "bottom",
+          "direction": "in"
+        },
+        {
+          "id": "output",
+          "label": "Out",
+          "type": "ethernet",
+          "position": "top",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk51h2zv-u2ehg",
+      "type": "adapter",
+      "label": "Eth>HDMI",
+      "detectionId": null,
+      "position": {
+        "x": 197.52850329223295,
+        "y": -46.94694032129965
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "input",
+          "label": "In",
+          "type": "ethernet",
+          "position": "bottom",
+          "direction": "in"
+        },
+        {
+          "id": "output",
+          "label": "Out",
+          "type": "hdmi",
+          "position": "top",
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "id": "device-mk51hqty-joqbd",
+      "type": "display",
+      "label": "Center monitor",
+      "detectionId": null,
+      "position": {
+        "x": 188.2518514109071,
+        "y": -212.17928311438342
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "upstream",
+          "label": "Input",
+          "type": "hdmi",
+          "position": "bottom",
+          "direction": "in"
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn-mk51gslz-7hmxj",
+      "source": "device-mk51fn2j-zc77q",
+      "target": "device-mk51g7az-fmr15",
+      "sourcePort": "port-mk51fvhb-we7p6",
+      "targetPort": "input",
+      "type": "hdmi",
+      "label": ""
+    },
+    {
+      "id": "conn-mk51i8bv-db679",
+      "source": "device-mk51hqty-joqbd",
+      "target": "device-mk51h2zv-u2ehg",
+      "sourcePort": "upstream",
+      "targetPort": "output",
+      "type": "hdmi",
+      "label": ""
+    },
+    {
+      "id": "conn-mk51idni-5bklb",
+      "source": "device-mk51g7az-fmr15",
+      "target": "device-mk51h2zv-u2ehg",
+      "sourcePort": "output",
+      "targetPort": "input",
+      "type": "ethernet",
+      "label": ""
+    },
+    {
+      "id": "conn-mk521roh-evpv3",
+      "source": "device-mk51h2zv-u2ehg",
+      "target": "device-mk51hqty-joqbd",
+      "sourcePort": "output",
+      "targetPort": "upstream",
+      "type": "hdmi",
+      "label": ""
+    }
+  ]
+}

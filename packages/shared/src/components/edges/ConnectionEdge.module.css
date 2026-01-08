@@ -1,0 +1,64 @@
+.edgeLabel {
+  background-color: var(--color-bg-secondary, #ffffff);
+  border: 1px solid var(--color-border, #cccccc);
+  padding: 2px 6px;
+  font-size: 11px;
+  font-family: var(--font-mono, monospace);
+  cursor: pointer;
+}
+
+.edgeLabel:hover {
+  background-color: var(--color-bg-tertiary, #e8e8e8);
+  border-color: var(--color-border-dark, #999999);
+}
+
+.labelContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.customLabel {
+  font-weight: 600;
+  color: var(--color-text-primary, #000000);
+}
+
+.connectionType {
+  font-size: 9px;
+  color: var(--color-text-secondary, #666666);
+  letter-spacing: 0.5px;
+}
+
+.portLabel {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-border, #cccccc);
+  padding: 1px 4px;
+  font-size: 9px;
+  font-family: var(--font-mono, monospace);
+  color: var(--color-text-secondary, #666666);
+  white-space: nowrap;
+  border-radius: 2px;
+}
+
+/* Animated edge for showing data flow direction */
+.animatedEdge {
+  stroke-dashoffset: 0;
+  animation: dashFlow 1s linear infinite;
+}
+
+@keyframes dashFlow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -12;
+  }
+}
+
+/* Highlighted state - when hovered in sidebar or canvas */
+.animatedEdge.highlighted {
+  stroke: var(--color-connection-thunderbolt, #4169e1) !important;
+  filter: drop-shadow(0 0 4px var(--color-connection-thunderbolt, #4169e1));
+  z-index: 1000;
+}

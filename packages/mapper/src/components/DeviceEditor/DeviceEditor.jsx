@@ -1,0 +1,187 @@
+import { useState } from 'react';
+import { CONNECTION_TYPES, PORT_POSITIONS, PORT_DIRECTIONS, createPort } from '@scamp/shared';
+import styles from './DeviceEditor.module.css';
+
+export default function DeviceEditor({ device, connections, devices, onSave, onCancel, onDelete }) {
+  const [label, setLabel] = useState(device.label);
+  const [ports, setPorts] = useState([...device.ports]);
+
+  // Find connections that involve this device
+  const deviceConnections = connections?.filter(
+    conn => conn.source === device.id || conn.target === device.id
+  ) || [];
+
+  // Get device name by ID
+  const getDeviceName = (deviceId) => {
+    const dev = devices?.find(d => d.id === deviceId);
+    return dev?.label || deviceId;
+  };
+
+  const handleAddPort = () => {
+    const newPort = createPort({
+      label: `Port ${ports.length + 1}`,
+      type: CONNECTION_TYPES.USB,
+      position: PORT_POSITIONS.RIGHT
+    });
+    setPorts([...ports, newPort]);
+  };
+
+  const handleRemovePort = (index) => {
+    setPorts(ports.filter((_, i) => i !== index));
+  };
+
+  const handlePortChange = (index, field, value) => {
+    const updatedPorts = [...ports];
+    updatedPorts[index] = { ...updatedPorts[index], [field]: value };
+    setPorts(updatedPorts);
+  };
+
+  const handleSave = () => {
+    // Validate port labels are unique
+    const portLabels = ports.map(p => p.label);
+    const duplicates = portLabels.filter((label, index) => portLabels.indexOf(label) !== index);
+
+    if (duplicates.length > 0) {
+      alert(`Port labels must be unique. Duplicate found: ${duplicates.join(', ')}`);
+      return;
+    }
+
+    // Validate port IDs are unique (shouldn't happen, but check anyway)
+    const portIds = ports.map(p => p.id);
+    const duplicateIds = portIds.filter((id, index) => portIds.indexOf(id) !== index);
+
+    if (duplicateIds.length > 0) {
+      alert(`Internal error: Duplicate port IDs detected. Please recreate these ports.`);
+      return;
+    }
+
+    onSave({
+      ...device,
+      label,
+      ports
+    });
+  };
+
+  const handleDelete = () => {
+    if (confirm(`Delete ${device.label}? This action cannot be undone.`)) {
+      onDelete(device.id);
+    }
+  };
+
+  return (
+    <div className={styles.overlay} onClick={onCancel}>
+      <div className={styles.dialog} onClick={(e) => e.stopPropagation()}>
+        <div className={styles.header}>
+          <h2>Edit Device</h2>
+          <button onClick={onCancel} className={styles.closeButton}>×</button>
+        </div>
+
+        <div className={styles.content}>
+          <div className={styles.field}>
+            <label>Device Name:</label>
+            <input
+              type="text"
+              value={label}
+              onChange={(e) => setLabel(e.target.value)}
+              className={styles.input}
+            />
+          </div>
+
+          <div className={styles.field}>
+            <label>Device Type:</label>
+            <span className={styles.readOnly}>{device.type}</span>
+          </div>
+
+          <div className={styles.portsSection}>
+            <div className={styles.portsHeader}>
+              <label>Ports:</label>
+              <button onClick={handleAddPort} className={styles.addButton}>
+                + Add Port
+              </button>
+            </div>
+
+            <div className={styles.portsList}>
+              {ports.map((port, index) => (
+                <div key={port.id} className={styles.portRow}>
+                  <input
+                    type="text"
+                    value={port.label}
+                    onChange={(e) => handlePortChange(index, 'label', e.target.value)}
+                    className={styles.portInput}
+                    placeholder="Port label"
+                  />
+                  <select
+                    value={port.type}
+                    onChange={(e) => handlePortChange(index, 'type', e.target.value)}
+                    className={styles.portSelect}
+                  >
+                    {Object.values(CONNECTION_TYPES).map(type => (
+                      <option key={type} value={type}>{type.toUpperCase()}</option>
+                    ))}
+                  </select>
+                  <select
+                    value={port.position}
+                    onChange={(e) => handlePortChange(index, 'position', e.target.value)}
+                    className={styles.portSelect}
+                  >
+                    {Object.values(PORT_POSITIONS).map(pos => (
+                      <option key={pos} value={pos}>{pos.toUpperCase()}</option>
+                    ))}
+                  </select>
+                  <select
+                    value={port.direction || PORT_DIRECTIONS.BIDIRECTIONAL}
+                    onChange={(e) => handlePortChange(index, 'direction', e.target.value)}
+                    className={styles.portSelect}
+                    title="Port direction"
+                  >
+                    {Object.values(PORT_DIRECTIONS).map(dir => (
+                      <option key={dir} value={dir}>{dir.toUpperCase()}</option>
+                    ))}
+                  </select>
+                  <button
+                    onClick={() => handleRemovePort(index)}
+                    className={styles.removeButton}
+                  >
+                    ×
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {deviceConnections.length > 0 && (
+            <div className={styles.connectionsSection}>
+              <label>Connections ({deviceConnections.length}):</label>
+              <div className={styles.connectionsList}>
+                {deviceConnections.map(conn => {
+                  const isSource = conn.source === device.id;
+                  const otherDeviceId = isSource ? conn.target : conn.source;
+                  const otherDeviceName = getDeviceName(otherDeviceId);
+                  const direction = isSource ? '→' : '←';
+
+                  return (
+                    <div key={conn.id} className={styles.connectionItem}>
+                      <span className={styles.connectionType}>{conn.type}</span>
+                      <span className={styles.connectionDetail}>
+                        {direction} {otherDeviceName}
+                      </span>
+                      {conn.label && <span className={styles.connectionLabel}>"{conn.label}"</span>}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className={styles.footer}>
+          <button onClick={handleDelete} className={styles.deleteButton}>Delete Device</button>
+          <div className={styles.footerRight}>
+            <button onClick={onCancel} className={styles.cancelButton}>Cancel</button>
+            <button onClick={handleSave} className={styles.saveButton}>Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

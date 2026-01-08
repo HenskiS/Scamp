@@ -1,0 +1,5 @@
+.usbDeviceNode {
+  min-width: 110px;
+  border-color: var(--color-connection-usb, #f4c430);
+  border-width: 2px;
+}

@@ -1,0 +1,5 @@
+.computerNode {
+  min-width: 140px;
+  border-color: var(--color-connection-thunderbolt, #4169e1);
+  border-width: 3px;
+}

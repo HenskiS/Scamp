@@ -1,0 +1,18 @@
+{
+  "name": "scamp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mac Device Topology Mapper - Map, plan, and verify complex Mac peripheral setups",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w packages/mapper",
+    "build": "npm run build -w packages/shared && npm run build -w packages/mapper",
+    "build:shared": "npm run build -w packages/shared",
+    "build:mapper": "npm run build -w packages/mapper"
+  },
+  "keywords": ["mac", "topology", "mapper", "peripherals", "usb", "thunderbolt"],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,138 @@
+.dynamicNode {
+  min-width: 120px;
+  min-height: 80px;
+}
+
+.adapterNode {
+  min-width: 80px;
+  min-height: 60px;
+}
+
+/* Highlighted state - when hovered in sidebar or canvas */
+.highlighted {
+  box-shadow: 0 0 0 3px var(--color-connection-thunderbolt, #4169e1) !important;
+  border-width: 3px !important;
+  z-index: 1000 !important;
+}
+
+.portLabel {
+  position: absolute;
+  font-size: 9px;
+  font-family: var(--font-mono);
+  color: var(--color-text-secondary, #666666);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1px 3px;
+  border-radius: 2px;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.portLabel[data-position="left"] {
+  transform: translate(-100%, -50%);
+  margin-left: -18px;
+}
+
+.portLabel[data-position="right"] {
+  transform: translate(100%, -50%);
+  margin-left: 18px;
+}
+
+.portLabel[data-position="top"] {
+  transform: translate(-50%, -100%);
+  margin-top: -18px;
+}
+
+.portLabel[data-position="bottom"] {
+  transform: translate(-50%, 100%);
+  margin-top: 18px;
+}
+
+/* Port direction indicators */
+.portIn::after,
+.portOut::after,
+.portBidirectional::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+/* IN ports - arrow pointing INTO device */
+.portIn[data-port-position="left"]::after {
+  content: '→';
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portIn[data-port-position="right"]::after {
+  content: '←';
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portIn[data-port-position="top"]::after {
+  content: '↓';
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portIn[data-port-position="bottom"]::after {
+  content: '↑';
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* OUT ports - arrow pointing OUT of device */
+.portOut[data-port-position="left"]::after {
+  content: '←';
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portOut[data-port-position="right"]::after {
+  content: '→';
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portOut[data-port-position="top"]::after {
+  content: '↑';
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portOut[data-port-position="bottom"]::after {
+  content: '↓';
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* BIDIRECTIONAL ports - double arrow */
+.portBidirectional[data-port-position="left"]::after,
+.portBidirectional[data-port-position="right"]::after {
+  content: '↔';
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portBidirectional[data-port-position="top"]::after,
+.portBidirectional[data-port-position="bottom"]::after {
+  content: '↕';
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

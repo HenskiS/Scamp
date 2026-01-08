@@ -1,0 +1,68 @@
+/* Base styles shared by all device nodes */
+
+.node {
+  background-color: var(--color-bg-secondary, #ffffff);
+  border: 2px solid var(--color-border-dark, #999999);
+  padding: 8px 12px;
+  min-width: 120px;
+  font-family: var(--font-main);
+  font-size: 13px;
+  cursor: move;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.node:hover {
+  border-color: var(--color-text-primary, #000000);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.node.selected {
+  border-color: var(--color-connection-thunderbolt, #4169e1);
+  box-shadow: 0 0 0 2px rgba(65, 105, 225, 0.3);
+}
+
+.nodeContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--color-text-primary, #000000);
+  text-align: center;
+  word-break: break-word;
+  max-width: 150px;
+}
+
+.type {
+  font-size: 11px;
+  color: var(--color-text-secondary, #666666);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* React Flow handles (connection ports) */
+.handle {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-bg-secondary, #ffffff);
+  border: 2px solid var(--color-border-dark, #999999);
+  border-radius: 0;
+}
+
+.handle:hover {
+  background-color: var(--color-connection-thunderbolt, #4169e1);
+  border-color: var(--color-connection-thunderbolt, #4169e1);
+}
+
+.handle.connected {
+  background-color: var(--color-status-connected, #32cd32);
+  border-color: var(--color-status-connected, #32cd32);
+}

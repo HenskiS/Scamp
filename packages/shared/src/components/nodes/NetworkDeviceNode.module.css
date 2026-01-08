@@ -1,0 +1,5 @@
+.networkDeviceNode {
+  min-width: 120px;
+  border-color: var(--color-connection-ethernet, #32cd32);
+  border-width: 2px;
+}
