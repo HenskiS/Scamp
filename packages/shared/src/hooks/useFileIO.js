@@ -48,7 +48,7 @@ export function useFileIO() {
   }, []);
 
   // Export topology to a JSON file
-  const exportTopology = useCallback((topology, filename = null) => {
+  const exportTopology = useCallback(async (topology, filename = null) => {
     try {
       // Generate filename if not provided
       const defaultFilename = `${topology.name.toLowerCase().replace(/\s+/g, '-')}.json`;
@@ -73,6 +73,22 @@ export function useFileIO() {
       // Cleanup
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
+
+      // Also save to samples folder (in dev mode only)
+      try {
+        await fetch('/api/save', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            filename: finalFilename,
+            content: jsonString
+          })
+        });
+        console.log(`✅ Saved to samples/${finalFilename}`);
+      } catch (apiError) {
+        // Silently fail if API not available (production mode)
+        console.log('Note: File not saved to samples folder (dev mode only)');
+      }
 
       return { success: true, filename: finalFilename };
     } catch (error) {

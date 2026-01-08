@@ -59,8 +59,8 @@ function App() {
   };
 
   // Handle file export
-  const handleExport = () => {
-    const result = exportTopology(topologyState.topology);
+  const handleExport = async () => {
+    const result = await exportTopology(topologyState.topology);
     if (result.success) {
       logEvent('FILE_EXPORT', `Exported to ${result.filename}`);
     } else {
