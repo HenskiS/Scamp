@@ -146,8 +146,8 @@
       "label": "iLok FR",
       "detectionId": null,
       "position": {
-        "x": -639.7580169020249,
-        "y": -207.9263697779145
+        "x": -659.7580169020249,
+        "y": -243.9263697779145
       },
       "canvas": "current",
       "ports": [
@@ -220,8 +220,8 @@
       "label": "Apanage USB",
       "detectionId": null,
       "position": {
-        "x": -563.4678663921488,
-        "y": -49.86556416144259
+        "x": -425.46786639214884,
+        "y": 14.134435838557408
       },
       "canvas": "current",
       "ports": [
@@ -236,14 +236,14 @@
           "id": "usb-1",
           "label": "USB 1",
           "type": "usb",
-          "position": "bottom",
+          "position": "right",
           "direction": "bidirectional"
         },
         {
           "id": "usb-2",
           "label": "USB 2",
           "type": "usb",
-          "position": "bottom",
+          "position": "right",
           "direction": "bidirectional"
         },
         {
@@ -311,8 +311,8 @@
       "label": "USB Ext for Webcam",
       "detectionId": null,
       "position": {
-        "x": -338.13615017072857,
-        "y": -22.11698453396835
+        "x": -853.5829938681643,
+        "y": -161.56382823140416
       },
       "canvas": "current",
       "ports": [
@@ -320,17 +320,18 @@
           "id": "input",
           "label": "In",
           "type": "usb",
-          "position": "left",
+          "position": "right",
           "direction": "in"
         },
         {
           "id": "output",
           "label": "Out",
           "type": "usb",
-          "position": "right",
+          "position": "bottom",
           "direction": "out"
         }
-      ]
+      ],
+      "style": {}
     },
     {
       "id": "device-mk5ryr56-iabb6",
@@ -365,8 +366,8 @@
       "label": "Studio Mouse",
       "detectionId": null,
       "position": {
-        "x": 1100.4779226583996,
-        "y": -6.056253133607811
+        "x": 1142.4779226583996,
+        "y": -142.0562531336078
       },
       "canvas": "current",
       "ports": [
@@ -385,8 +386,8 @@
       "label": "Eth>USB Studio Mouse",
       "detectionId": null,
       "position": {
-        "x": 865.1488725793902,
-        "y": -2.680919261134136
+        "x": 907.1488725793902,
+        "y": -138.68091926113414
       },
       "canvas": "current",
       "ports": [
@@ -412,8 +413,8 @@
       "label": "Webcam",
       "detectionId": null,
       "position": {
-        "x": -285.86693762676964,
-        "y": 96.67140144856006
+        "x": -837.8669376267696,
+        "y": -31.32859855143994
       },
       "canvas": "current",
       "ports": [
@@ -421,10 +422,11 @@
           "id": "usb",
           "label": "USB",
           "type": "usb",
-          "position": "left",
+          "position": "top",
           "direction": "in"
         }
-      ]
+      ],
+      "style": {}
     },
     {
       "id": "device-mk5s4yhy-oj6me",
@@ -486,8 +488,8 @@
       "label": "iLok ETHNO",
       "detectionId": null,
       "position": {
-        "x": -736.7465990419194,
-        "y": -49.83043024526239
+        "x": -594.7465990419194,
+        "y": 26.16956975473761
       },
       "canvas": "current",
       "ports": [
@@ -507,8 +509,8 @@
       "label": "USB>Eth midi interface",
       "detectionId": null,
       "position": {
-        "x": -743.5687553865139,
-        "y": 306.5159181362272
+        "x": -168.8880529075327,
+        "y": -9.561405287162934
       },
       "canvas": "current",
       "ports": [
@@ -516,17 +518,18 @@
           "id": "input",
           "label": "In",
           "type": "usb",
-          "position": "top",
+          "position": "left",
           "direction": "in"
         },
         {
           "id": "output",
           "label": "Out",
           "type": "ethernet",
-          "position": "bottom",
+          "position": "right",
           "direction": "out"
         }
-      ]
+      ],
+      "style": {}
     },
     {
       "id": "device-mk5sm9qc-iqkwu",
@@ -534,8 +537,8 @@
       "label": "USB>Eth unlabeled",
       "detectionId": null,
       "position": {
-        "x": -618.1261928524259,
-        "y": 201.19702557582474
+        "x": -181.69188442747875,
+        "y": 89.91515401945523
       },
       "canvas": "current",
       "ports": [
@@ -543,7 +546,7 @@
           "id": "input",
           "label": "In",
           "type": "usb",
-          "position": "top",
+          "position": "left",
           "direction": "in"
         },
         {
@@ -553,7 +556,8 @@
           "position": "bottom",
           "direction": "out"
         }
-      ]
+      ],
+      "style": {}
     },
     {
       "id": "device-mk5snsf7-38f1g",
@@ -561,8 +565,8 @@
       "label": "Presonus interface",
       "detectionId": null,
       "position": {
-        "x": -530.3948339876083,
-        "y": 85.54416825288541
+        "x": -465.35519804475626,
+        "y": 144.300958408211
       },
       "canvas": "current",
       "ports": [
@@ -573,7 +577,8 @@
           "position": "top",
           "direction": "in"
         }
-      ]
+      ],
+      "style": {}
     },
     {
       "id": "device-mk5therw-6zndx",
@@ -581,8 +586,8 @@
       "label": "Eth>USB midi interface",
       "detectionId": null,
       "position": {
-        "x": 865.0824593774254,
-        "y": 344.7866372171714
+        "x": 901.0824593774254,
+        "y": -1.2133627828285967
       },
       "canvas": "current",
       "ports": [
@@ -609,8 +614,8 @@
       "label": "MIDI Interface",
       "detectionId": null,
       "position": {
-        "x": 1093.6701641937193,
-        "y": 342.4257473746338
+        "x": 1133.6701641937193,
+        "y": -7.574252625366228
       },
       "canvas": "current",
       "ports": [
@@ -630,8 +635,8 @@
       "label": "Eth>USB unlabeled EMPTY",
       "detectionId": null,
       "position": {
-        "x": 850.4338218204533,
-        "y": 245.56638923935134
+        "x": 904.4338218204533,
+        "y": 115.56638923935134
       },
       "canvas": "current",
       "ports": [
@@ -712,8 +717,8 @@
       "label": "Eth>HDMI Studio Mon 2",
       "detectionId": null,
       "position": {
-        "x": 962.5885162348134,
-        "y": -241.83619293111587
+        "x": 894.5885162348134,
+        "y": -363.8361929311159
       },
       "canvas": "current",
       "ports": [
@@ -739,8 +744,8 @@
       "label": "Mon 2 Controller",
       "detectionId": null,
       "position": {
-        "x": 1190.4771184403603,
-        "y": -187.7989176828487
+        "x": 1122.4771184403603,
+        "y": -309.7989176828487
       },
       "canvas": "current",
       "ports": [
@@ -834,8 +839,8 @@
       "label": "Eth>USB USB HUB",
       "detectionId": null,
       "position": {
-        "x": 848.3445001919915,
-        "y": -572.1387342369253
+        "x": 764.3860329663531,
+        "y": -602.2026871779507
       },
       "canvas": "current",
       "ports": [
@@ -861,8 +866,8 @@
       "label": "Sabrent Desk",
       "detectionId": null,
       "position": {
-        "x": 1015.7837305081205,
-        "y": -603.5190708594029
+        "x": 943.2081540388926,
+        "y": -601.8596019517103
       },
       "canvas": "current",
       "ports": [
@@ -1110,8 +1115,8 @@
       "label": "MicroSD Card",
       "detectionId": null,
       "position": {
-        "x": -508.0537570845489,
-        "y": -594.815431191366
+        "x": -554.0537570845489,
+        "y": -648.815431191366
       },
       "canvas": "current",
       "ports": [

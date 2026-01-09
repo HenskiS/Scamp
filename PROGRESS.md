@@ -1,6 +1,6 @@
 # Scamp Development Progress
 
-**Last Updated:** 2026-01-07
+**Last Updated:** 2026-01-08
 
 ## Project Overview
 
@@ -9,9 +9,15 @@ Scamp is a Mac device topology mapper tool for planning and visualizing peripher
 - **Shared**: Reusable React Flow components library
 - **Scanner**: (Future) Real-time device detection app for macOS
 
-## Current Status: Mapper MVP Complete ✓
+## Current Status: Mapper MVP Complete + Enhanced ✓
 
-The Mapper application is feature-complete for Phase 1-8 planning tasks. All core functionality is working.
+The Mapper application is feature-complete with advanced spatial organization features:
+- ✅ All core planning functionality (devices, connections, editing)
+- ✅ Group selection and movement with batch updates
+- ✅ Text label nodes for zone marking (Desk, Rack, Table, etc.)
+- ✅ Customizable text label styling (font size, colors)
+- ✅ Multi-select with Cmd/Ctrl+click and box selection
+- ✅ Efficient batch position updates for performance
 
 ---
 
@@ -72,6 +78,17 @@ The Mapper application is feature-complete for Phase 1-8 planning tasks. All cor
 - [x] Visual feedback and hover states
 - [x] Tooltip updates for drag-and-drop
 
+### ✅ Phase 9: Spatial Organization & Zone Marking
+- [x] **Group selection**: Box selection (drag on empty canvas) and Cmd/Ctrl+click multi-select
+- [x] **Group movement**: Move multiple devices together, preserving relative positions
+- [x] **Batch position updates**: Efficient single-state-update for N devices moved together
+- [x] **Text label nodes**: Draggable zone markers (Desk, Rack, Table, etc.) with no ports
+- [x] **Text label styling**: Customizable font size, text color, and background color per label
+- [x] **Annotations toolbar section**: Dedicated UI section with Text Label button
+- [x] **Green selection for labels**: Visual distinction from device nodes (green vs blue)
+- [x] **Dashed borders for labels**: Clear visual separation from device nodes
+- [x] **React Flow selection config**: `selectionOnDrag`, `panOnDrag`, `multiSelectionKeyCode`
+
 ---
 
 ## File Structure
@@ -89,17 +106,19 @@ Scamp/
 │   │   └── src/
 │   │       ├── components/
 │   │       │   ├── Canvas/
-│   │       │   │   ├── TopologyCanvas.jsx          # React Flow wrapper with drop handling
+│   │       │   │   ├── TopologyCanvas.jsx          # React Flow wrapper with selection & batch updates
 │   │       │   │   └── TopologyCanvas.module.css
 │   │       │   ├── nodes/
 │   │       │   │   ├── DynamicDeviceNode.jsx       # Universal node component with directionality
 │   │       │   │   ├── DynamicDeviceNode.module.css
+│   │       │   │   ├── TextLabelNode.jsx           # Text label node for zone marking
+│   │       │   │   ├── TextLabelNode.module.css
 │   │       │   │   └── BaseNode.module.css
 │   │       │   └── edges/
 │   │       │       ├── ConnectionEdge.jsx          # Custom styled edges
 │   │       │       └── index.js
 │   │       ├── hooks/
-│   │       │   ├── useTopologyState.js             # CRUD operations for topology
+│   │       │   ├── useTopologyState.js             # CRUD operations + batch position updates
 │   │       │   └── useFileIO.js                    # Import/export JSON files
 │   │       ├── utils/
 │   │       │   ├── fileFormat.js                   # Schema, constants, factory functions
@@ -113,14 +132,14 @@ Scamp/
 │       ├── index.html
 │       └── src/
 │           ├── main.jsx
-│           ├── App.jsx                              # Main app with port label toggle
+│           ├── App.jsx                              # Main app with batch position updates
 │           ├── App.module.css
 │           └── components/
 │               ├── Toolbar/
-│               │   ├── Toolbar.jsx                  # Draggable device buttons
+│               │   ├── Toolbar.jsx                  # Device buttons + Annotations section
 │               │   └── Toolbar.module.css
 │               ├── DeviceEditor/
-│               │   ├── DeviceEditor.jsx             # Device editing modal with direction dropdown
+│               │   ├── DeviceEditor.jsx             # Device editing modal with text label styling
 │               │   └── DeviceEditor.module.css
 │               ├── ConnectionEditor/
 │               │   ├── ConnectionEditor.jsx         # Connection editing modal with dropdowns
@@ -128,6 +147,9 @@ Scamp/
 │               ├── Sidebar/
 │               │   ├── Sidebar.jsx                  # Tabbed device/connection browser
 │               │   └── Sidebar.module.css
+│               ├── ConnectionTypesEditor/
+│               │   ├── ConnectionTypesEditor.jsx    # Custom connection types editor
+│               │   └── ConnectionTypesEditor.module.css
 │               └── EventLog/
 │                   ├── EventLog.jsx                 # Reverse chronological event list
 │                   └── EventLog.module.css
@@ -172,6 +194,38 @@ Uses native HTML5 drag-and-drop API:
 3. Canvas wrapper listens for `onDrop` events
 4. React Flow's `screenToFlowPosition()` converts mouse coordinates to canvas position
 5. Callback triggers normal device creation flow with exact drop position
+
+### Batch Position Updates for Group Movement
+**Problem:** Moving N devices resulted in N state updates and N localStorage writes, causing performance issues.
+
+**Solution:** Detect multiple position changes and batch them:
+1. React Flow's `onNodesChange` receives position changes with `dragging: false` when drag completes
+2. Filter for position changes where `dragging === false`
+3. If 1 change: Use existing `onDeviceMove(deviceId, position)` single update
+4. If multiple changes: Call `onMultipleDevicesMove({ id1: pos1, id2: pos2 })` batch update
+5. `updateMultipleDevicePositions()` updates all device positions in a single `setTopology()` call
+6. Result: N devices = 1 state update = 1 localStorage write
+
+**Benefits:**
+- Performance: Single re-render instead of N re-renders
+- Cleaner code: No need to debounce or queue updates
+- Automatic: Works with React Flow's built-in group movement
+
+### Text Labels as Devices Without Ports
+**Problem:** Need zone markers (Desk, Rack, Table) that don't interfere with device connections.
+
+**Solution:** Treat text labels as a special device type:
+1. Added `TEXT_LABEL: 'text-label'` to DEVICE_TYPES
+2. Set `DEFAULT_PORTS[TEXT_LABEL] = []` (no ports)
+3. Created custom `TextLabelNode` component (instead of using DynamicDeviceNode)
+4. Added `style` property to device data model for font size, colors
+5. No Handle components rendered = cannot draw connections
+
+**Benefits:**
+- Reuses existing device infrastructure (CRUD, position updates, save/load)
+- Works with multi-select and group movement automatically
+- Visual distinction: dashed border, green selection vs blue for devices
+- Customizable styling per label for zone differentiation
 
 ---
 
@@ -304,6 +358,63 @@ Uses native HTML5 drag-and-drop API:
    - Perfect for audio interfaces, MIDI controllers, iLoks, dongles, etc.
    - Files: [fileFormat.js](packages/shared/src/utils/fileFormat.js:13,92), [DynamicDeviceNode.jsx](packages/shared/src/components/nodes/DynamicDeviceNode.jsx:25,40), [Toolbar.jsx](packages/mapper/src/components/Toolbar/Toolbar.jsx:12)
 
+### Group Selection and Movement
+
+9. **Multi-Select and Group Movement** - Added ability to select and move multiple devices together:
+   - Box selection: Click and drag on empty canvas to select multiple devices
+   - Multi-select: Cmd/Ctrl+click to add/remove devices from selection
+   - Group movement: Drag any selected device to move all selected devices together
+   - Relative positions preserved during group moves
+   - Files: [TopologyCanvas.jsx](packages/shared/src/components/Canvas/TopologyCanvas.jsx:61-93,294-296)
+
+10. **Batch Position Updates** - Optimized performance for group movements:
+   - Added `updateMultipleDevicePositions()` method for batch updates
+   - Single state update for N devices (instead of N updates)
+   - Single localStorage write (instead of N writes)
+   - Detects position changes in `onNodesChange` and batches them automatically
+   - Files: [useTopologyState.js](packages/shared/src/hooks/useTopologyState.js:109-118,266), [TopologyCanvas.jsx](packages/shared/src/components/Canvas/TopologyCanvas.jsx:71-89), [App.jsx](packages/mapper/src/App.jsx:85-88)
+
+11. **React Flow Selection Configuration** - Enabled built-in selection features:
+   - `selectionOnDrag={true}` - enables box/marquee selection
+   - `panOnDrag={[1, 2]}` - pan with middle/right mouse (prevents conflict with selection)
+   - `multiSelectionKeyCode="Meta"` - Cmd/Ctrl+click for multi-select
+   - Files: [TopologyCanvas.jsx](packages/shared/src/components/Canvas/TopologyCanvas.jsx:294-296)
+
+### Text Label Nodes for Zone Marking
+
+12. **Text Label Node Component** - New node type for annotating canvas with zone markers:
+   - Draggable text labels for marking physical zones (Desk, Rack, Table, etc.)
+   - Default appearance: light yellow background, black bold text, 16px, dashed border
+   - No ports (empty ports array) - cannot draw connections to/from labels
+   - Green selection highlight (vs blue for devices) to distinguish type
+   - Files: [TextLabelNode.jsx](packages/shared/src/components/nodes/TextLabelNode.jsx), [TextLabelNode.module.css](packages/shared/src/components/nodes/TextLabelNode.module.css)
+
+13. **Text Label Styling** - Customizable appearance per label:
+   - Font size: Small (12px), Medium (16px), Large (20px), Extra Large (24px)
+   - Text color: Any color via color picker
+   - Background color: Any color via color picker
+   - Style stored in device object as `style: { fontSize, color, backgroundColor, fontWeight }`
+   - DeviceEditor shows style controls when editing text-label type
+   - Files: [DeviceEditor.jsx](packages/mapper/src/components/DeviceEditor/DeviceEditor.jsx:8,120-159,182), [DeviceEditor.module.css](packages/mapper/src/components/DeviceEditor/DeviceEditor.module.css:276-282)
+
+14. **Text Label Data Model** - Integrated as device type:
+   - Added `TEXT_LABEL: 'text-label'` to DEVICE_TYPES
+   - Added empty ports array to DEFAULT_PORTS for text labels
+   - Added `style` parameter to `createDevice()` factory function
+   - Style property passed through data transform pipeline
+   - Files: [fileFormat.js](packages/shared/src/utils/fileFormat.js:14,94,116), [dataTransform.js](packages/shared/src/utils/dataTransform.js:23), [App.jsx](packages/mapper/src/App.jsx:182)
+
+15. **Toolbar Integration** - Added Annotations section:
+   - New "Text Label" button with 📝 icon
+   - Visual dividers separate Annotations from device buttons
+   - Draggable to canvas or click to add at random position
+   - Files: [Toolbar.jsx](packages/mapper/src/components/Toolbar/Toolbar.jsx:38-52), [Toolbar.module.css](packages/mapper/src/components/Toolbar/Toolbar.module.css:86-91)
+
+16. **Text Label Registration** - Wired into React Flow:
+   - Imported and registered in nodeTypes as `'text-label': TextLabelNode`
+   - Works with all existing features: drag, multi-select, save/load, delete, hover highlight
+   - Files: [TopologyCanvas.jsx](packages/shared/src/components/Canvas/TopologyCanvas.jsx:13,27)
+
 ---
 
 ## Known Issues & Limitations
@@ -319,7 +430,7 @@ All requested features have been implemented and are working as expected.
 ### Basic Topology Operations
 - [ ] Create new topology
 - [ ] Edit setup name in header
-- [ ] Add all 8 device types (Computer, Hub, Display, USB Device, Network Device, Thunderbolt Device, Adapter, Other)
+- [ ] Add all device types (Computer, Hub, Display, USB Device, Network Device, Thunderbolt Device, Adapter, Other, Text Label)
 - [ ] Click to add devices at random positions
 - [ ] Drag devices from toolbar to specific canvas positions
 - [ ] Draw connections between devices
@@ -367,6 +478,36 @@ All requested features have been implemented and are working as expected.
 - [ ] Check event log shows actions in reverse chronological order
 - [ ] Verify no temporary messages appear in header (all events in log only)
 
+### Group Selection and Movement
+- [ ] Box selection: Click and drag on empty canvas to select multiple devices
+- [ ] Nodes within box become selected with blue borders
+- [ ] Cmd/Ctrl+click to add individual devices to selection
+- [ ] Cmd/Ctrl+click on selected device to deselect it
+- [ ] Click on empty canvas to deselect all
+- [ ] Drag one selected device to move entire group together
+- [ ] Verify relative positions between devices are preserved
+- [ ] Save and reload to verify group positions persisted correctly
+- [ ] Middle-click or right-click to pan canvas (left-click reserved for selection)
+- [ ] Select mix of devices and text labels together and move as group
+
+### Text Label Features
+- [ ] Click "Text Label" button in toolbar
+- [ ] Enter text (e.g., "Desk Area") and verify label appears
+- [ ] Drag "Text Label" button to canvas at specific position
+- [ ] Double-click text label to open editor
+- [ ] Change label text and save
+- [ ] Change font size to Large (20px) and verify change
+- [ ] Change text color to red using color picker
+- [ ] Change background color to light blue
+- [ ] Verify text label has dashed border (not solid)
+- [ ] Select text label - verify green border (not blue like devices)
+- [ ] Drag text label to different position
+- [ ] Add multiple text labels with different styles for different zones
+- [ ] Save topology and reload - verify text labels restored with correct styles
+- [ ] Text labels show "0 ports" in sidebar
+- [ ] Cannot draw connections to/from text labels
+- [ ] Text labels work with multi-select and group movement
+
 ---
 
 ## Next Steps (Future Phases)
@@ -389,6 +530,9 @@ All requested features have been implemented and are working as expected.
 - Dark mode
 - Multiple topology tabs
 - Search/filter devices
+- Zone containers (rectangular background areas for text labels)
+- Alignment tools (align selected devices to top/bottom/left/right)
+- Distribution tools (evenly space selected devices)
 
 ---
 
