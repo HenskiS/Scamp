@@ -82,3 +82,10 @@
 .toggleButton:active {
   background-color: var(--color-border, #cccccc);
 }
+
+.divider {
+  width: 1px;
+  height: 30px;
+  background-color: var(--color-border, #cccccc);
+  margin: 0 8px;
+}

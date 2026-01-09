@@ -10,6 +10,7 @@ import {
 import '@xyflow/react/dist/style.css';
 import { topologyToReactFlow } from '../../utils/dataTransform.js';
 import DynamicDeviceNode from '../nodes/DynamicDeviceNode.jsx';
+import TextLabelNode from '../nodes/TextLabelNode.jsx';
 import { ConnectionEdge } from '../edges/index.js';
 import styles from './TopologyCanvas.module.css';
 
@@ -22,7 +23,8 @@ const nodeTypes = {
   'network-device': DynamicDeviceNode,
   'thunderbolt-device': DynamicDeviceNode,
   'adapter': DynamicDeviceNode,
-  'other': DynamicDeviceNode
+  'other': DynamicDeviceNode,
+  'text-label': TextLabelNode
 };
 
 // Register custom edge types

@@ -19,7 +19,8 @@ export function deviceToNode(device, connectionTypes = null) {
       canvas: device.canvas,
       deviceType: device.type,
       ports: device.ports || [],
-      connectionTypes: connectionTypes
+      connectionTypes: connectionTypes,
+      style: device.style
     }
   };
 }

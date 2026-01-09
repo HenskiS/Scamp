@@ -5,6 +5,7 @@ import styles from './DeviceEditor.module.css';
 export default function DeviceEditor({ device, connections, devices, connectionTypes, onSave, onCancel, onDelete }) {
   const [label, setLabel] = useState(device.label);
   const [ports, setPorts] = useState([...device.ports]);
+  const [style, setStyle] = useState(device.style || {});
 
   // Use dynamic connection types or fall back to hardcoded ones
   let availableConnectionTypes = connectionTypes || Object.values(CONNECTION_TYPES).map(id => ({ id, name: id.toUpperCase() }));
@@ -81,7 +82,8 @@ export default function DeviceEditor({ device, connections, devices, connectionT
     onSave({
       ...device,
       label,
-      ports
+      ports,
+      style
     });
   };
 
@@ -114,6 +116,47 @@ export default function DeviceEditor({ device, connections, devices, connectionT
             <label>Device Type:</label>
             <span className={styles.readOnly}>{device.type}</span>
           </div>
+
+          {device.type === 'text-label' && (
+            <>
+              <div className={styles.field}>
+                <label htmlFor="font-size">Font Size:</label>
+                <select
+                  id="font-size"
+                  value={style.fontSize || '16px'}
+                  onChange={(e) => setStyle({ ...style, fontSize: e.target.value })}
+                  className={styles.input}
+                >
+                  <option value="12px">Small (12px)</option>
+                  <option value="16px">Medium (16px)</option>
+                  <option value="20px">Large (20px)</option>
+                  <option value="24px">Extra Large (24px)</option>
+                </select>
+              </div>
+
+              <div className={styles.field}>
+                <label htmlFor="text-color">Text Color:</label>
+                <input
+                  id="text-color"
+                  type="color"
+                  value={style.color || '#000000'}
+                  onChange={(e) => setStyle({ ...style, color: e.target.value })}
+                  className={styles.colorInput}
+                />
+              </div>
+
+              <div className={styles.field}>
+                <label htmlFor="bg-color">Background Color:</label>
+                <input
+                  id="bg-color"
+                  type="color"
+                  value={style.backgroundColor || '#ffff99'}
+                  onChange={(e) => setStyle({ ...style, backgroundColor: e.target.value })}
+                  className={styles.colorInput}
+                />
+              </div>
+            </>
+          )}
 
           <div className={styles.portsSection}>
             <div className={styles.portsHeader}>

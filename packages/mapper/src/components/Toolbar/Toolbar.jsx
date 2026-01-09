@@ -35,6 +35,21 @@ export default function Toolbar({ onAddDevice, showPortLabels, onTogglePortLabel
           </button>
         ))}
       </div>
+      <div className={styles.divider}></div>
+      <div className={styles.section}>
+        <span className={styles.sectionLabel}>Annotations:</span>
+        <button
+          onClick={() => onAddDevice(DEVICE_TYPES.TEXT_LABEL)}
+          onDragStart={(e) => handleDragStart(e, DEVICE_TYPES.TEXT_LABEL)}
+          draggable
+          className={styles.toolbarButton}
+          title="Add text label to mark zones (Desk, Rack, etc.)"
+        >
+          <span className={styles.icon}>📝</span>
+          <span className={styles.label}>Text Label</span>
+        </button>
+      </div>
+      <div className={styles.divider}></div>
       <div className={styles.rightSection}>
         <button
           onClick={onTogglePortLabels}

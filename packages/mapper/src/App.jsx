@@ -178,7 +178,8 @@ function App() {
   const handleDeviceEditorSave = (updatedDevice) => {
     topologyState.updateDevice(updatedDevice.id, {
       label: updatedDevice.label,
-      ports: updatedDevice.ports
+      ports: updatedDevice.ports,
+      style: updatedDevice.style
     });
     logEvent('DEVICE_UPDATE', `Updated device "${updatedDevice.label}" (${updatedDevice.ports.length} ports)`);
     setEditingDevice(null);

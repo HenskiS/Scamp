@@ -1,0 +1,36 @@
+.textLabelNode {
+  min-width: 60px;
+  max-width: 300px;
+  min-height: 30px;
+  padding: 8px 12px;
+  border: 1px dashed var(--color-border, #cccccc);
+  border-radius: 4px;
+  cursor: move;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.textLabelNode:hover {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-text-primary, #000000);
+}
+
+.textContent {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+/* Override BaseNode selected state to use green for text labels */
+.textLabelNode.selected {
+  border-color: #32cd32 !important;
+  border-style: solid !important;
+  box-shadow: 0 0 0 2px rgba(50, 205, 50, 0.3) !important;
+}
+
+.textLabelNode.highlighted {
+  box-shadow: 0 0 0 3px rgba(50, 205, 50, 0.5) !important;
+  border-width: 2px !important;
+}

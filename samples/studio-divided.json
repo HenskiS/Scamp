@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "name": "Studio-Complete-no-network",
+  "name": "Studio-Divided",
   "devices": [
     {
       "id": "device-mk5r9lkd-i4zio",
@@ -658,8 +658,8 @@
       "label": "TB>HDMI Studio Mon 2",
       "detectionId": null,
       "position": {
-        "x": -35.34861875283805,
-        "y": -321.7423696349668
+        "x": -39.348618752838036,
+        "y": -351.7423696349668
       },
       "canvas": "current",
       "ports": [
@@ -685,8 +685,8 @@
       "label": "HDMI>Eth Studio Mon 2",
       "detectionId": null,
       "position": {
-        "x": 170.80834109387266,
-        "y": -322.5537602007749
+        "x": 188.80834109387266,
+        "y": -354.5537602007749
       },
       "canvas": "current",
       "ports": [
@@ -766,8 +766,8 @@
       "label": "PCI Chassis",
       "detectionId": null,
       "position": {
-        "x": -272.8175524383324,
-        "y": -370.3793359493231
+        "x": -264.8175524383324,
+        "y": -408.3793359493231
       },
       "canvas": "current",
       "ports": [
@@ -786,8 +786,8 @@
       "label": "10G Switch",
       "detectionId": null,
       "position": {
-        "x": -16.666447228462133,
-        "y": -423.0620801967025
+        "x": -676.6664472284622,
+        "y": -535.0620801967025
       },
       "canvas": "current",
       "ports": [
@@ -795,10 +795,11 @@
           "id": "ethernet",
           "label": "Ethernet",
           "type": "ethernet",
-          "position": "left",
+          "position": "right",
           "direction": "bidirectional"
         }
-      ]
+      ],
+      "style": {}
     },
     {
       "id": "device-mk5uomoq-baene",
@@ -1109,8 +1110,8 @@
       "label": "MicroSD Card",
       "detectionId": null,
       "position": {
-        "x": -610.0537570845489,
-        "y": -556.815431191366
+        "x": -508.0537570845489,
+        "y": -594.815431191366
       },
       "canvas": "current",
       "ports": [

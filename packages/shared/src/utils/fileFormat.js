@@ -10,7 +10,8 @@ export const DEVICE_TYPES = {
   NETWORK_DEVICE: 'network-device',
   THUNDERBOLT_DEVICE: 'thunderbolt-device',
   ADAPTER: 'adapter',
-  OTHER: 'other'
+  OTHER: 'other',
+  TEXT_LABEL: 'text-label'
 };
 
 // Connection type constants (for backwards compatibility)
@@ -89,7 +90,8 @@ const DEFAULT_PORTS = {
     { id: 'input', label: 'In', type: CONNECTION_TYPES.USB, position: PORT_POSITIONS.LEFT, direction: PORT_DIRECTIONS.IN },
     { id: 'output', label: 'Out', type: CONNECTION_TYPES.ETHERNET, position: PORT_POSITIONS.RIGHT, direction: PORT_DIRECTIONS.OUT }
   ],
-  [DEVICE_TYPES.OTHER]: [] // No default ports - user can add their own
+  [DEVICE_TYPES.OTHER]: [], // No default ports - user can add their own
+  [DEVICE_TYPES.TEXT_LABEL]: [] // No ports for text labels
 };
 
 // Factory function to create a new empty topology
@@ -110,12 +112,13 @@ export function createDevice({
   position = { x: 0, y: 0 },
   canvas = CANVAS_TYPES.CURRENT,
   detectionId = null,
-  ports = null
+  ports = null,
+  style = null
 }) {
   // Use provided ports or default ports for this device type
   const devicePorts = ports || (DEFAULT_PORTS[type] ? JSON.parse(JSON.stringify(DEFAULT_PORTS[type])) : []);
 
-  return {
+  const device = {
     id: generateId('device'),
     type,
     label,
@@ -124,6 +127,13 @@ export function createDevice({
     canvas,
     ports: devicePorts
   };
+
+  // Add style property for text labels
+  if (style) {
+    device.style = style;
+  }
+
+  return device;
 }
 
 // Factory function to create a new connection

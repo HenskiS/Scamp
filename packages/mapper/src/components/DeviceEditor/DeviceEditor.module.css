@@ -272,3 +272,11 @@
   font-style: italic;
   color: var(--color-text-secondary, #666666);
 }
+
+.colorInput {
+  width: 60px;
+  height: 35px;
+  border: 1px solid var(--color-border, #cccccc);
+  border-radius: 4px;
+  cursor: pointer;
+}
