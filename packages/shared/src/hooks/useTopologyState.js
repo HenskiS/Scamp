@@ -106,6 +106,17 @@ export function useTopologyState(initialTopology = null) {
     updateDevice(deviceId, { position });
   }, [updateDevice]);
 
+  // Batch update multiple device positions (for group move operations)
+  const updateMultipleDevicePositions = useCallback((positionUpdates) => {
+    setTopology(prev => ({
+      ...prev,
+      devices: prev.devices.map(device => {
+        const update = positionUpdates[device.id];
+        return update ? { ...device, position: update } : device;
+      })
+    }));
+  }, []);
+
   // Move device to different canvas
   const moveDeviceToCanvas = useCallback((deviceId, canvas) => {
     updateDevice(deviceId, { canvas });
@@ -252,6 +263,7 @@ export function useTopologyState(initialTopology = null) {
     updateDevice,
     removeDevice,
     updateDevicePosition,
+    updateMultipleDevicePositions,
     moveDeviceToCanvas,
 
     // Connection operations

@@ -146,8 +146,8 @@
       "label": "iLok FR",
       "detectionId": null,
       "position": {
-        "x": -347.7580169020249,
-        "y": 28.073630222085498
+        "x": -309.7580169020249,
+        "y": 24.073630222085498
       },
       "canvas": "current",
       "ports": [
@@ -166,8 +166,8 @@
       "label": "TB>HDMI",
       "detectionId": null,
       "position": {
-        "x": -323.9498270390061,
-        "y": -124.76122806219252
+        "x": -285.9498270390061,
+        "y": -128.76122806219252
       },
       "canvas": "current",
       "ports": [
@@ -193,8 +193,8 @@
       "label": "Piano Monitor HDMI Ext EMPTY",
       "detectionId": null,
       "position": {
-        "x": -574.5478639350961,
-        "y": -127.7061070239565
+        "x": -536.5478639350961,
+        "y": -131.70610702395652
       },
       "canvas": "current",
       "ports": [

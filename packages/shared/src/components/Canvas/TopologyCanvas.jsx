@@ -34,6 +34,7 @@ export default function TopologyCanvas({
   topology = null,
   canvas = 'current',
   onDeviceMove,
+  onMultipleDevicesMove,
   onDeviceDelete,
   onConnect,
   onEdgeDelete,
@@ -67,9 +68,29 @@ export default function TopologyCanvas({
       });
     }
 
+    // Check for position changes (from dragging)
+    const positionChanges = changes.filter(
+      change => change.type === 'position' && change.dragging === false
+    );
+
+    if (positionChanges.length > 0) {
+      if (positionChanges.length === 1 && onDeviceMove) {
+        // Single device moved - use existing callback
+        const change = positionChanges[0];
+        onDeviceMove(change.id, change.position);
+      } else if (positionChanges.length > 1 && onMultipleDevicesMove) {
+        // Multiple devices moved - use batch callback
+        const positionUpdates = {};
+        positionChanges.forEach(change => {
+          positionUpdates[change.id] = change.position;
+        });
+        onMultipleDevicesMove(positionUpdates);
+      }
+    }
+
     // Apply the changes to the local state
     onNodesChange(changes);
-  }, [onNodesChange, onDeviceDelete]);
+  }, [onNodesChange, onDeviceDelete, onDeviceMove, onMultipleDevicesMove]);
 
   // Handle edges being deleted (via Delete key or other means)
   const handleEdgesChange = useCallback((changes) => {
@@ -270,6 +291,9 @@ export default function TopologyCanvas({
         onDrop={handleDrop}
         fitView
         className={styles.reactFlow}
+        selectionOnDrag={true}
+        panOnDrag={[1, 2]}
+        multiSelectionKeyCode="Meta"
       >
         <Background />
         <Controls />

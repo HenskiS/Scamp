@@ -82,6 +82,11 @@ function App() {
     topologyState.updateDevicePosition(deviceId, position);
   };
 
+  // Handle multiple devices moved together (batch update)
+  const handleMultipleDevicesMove = (positionUpdates) => {
+    topologyState.updateMultipleDevicePositions(positionUpdates);
+  };
+
   // Handle new connection creation when dragging between ports
   const handleConnect = (connection) => {
     // Determine connection type based on actual port types
@@ -341,6 +346,7 @@ function App() {
               topology={topologyState.topology}
               canvas={activeCanvas}
               onDeviceMove={handleDeviceMove}
+              onMultipleDevicesMove={handleMultipleDevicesMove}
               onDeviceDelete={handleDeviceDelete}
               onConnect={handleConnect}
               onEdgeDelete={handleEdgeDelete}
