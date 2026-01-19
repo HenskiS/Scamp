@@ -1364,6 +1364,34 @@
           "type": "ctype-mklgs3db-lybe8",
           "position": "left",
           "direction": "bidirectional"
+        },
+        {
+          "id": "port-mkll7ycr-i72zr",
+          "label": "Hafler L",
+          "type": "ctype-mklgs3db-lybe8",
+          "position": "bottom",
+          "direction": "out"
+        },
+        {
+          "id": "port-mkll7ywh-mymc0",
+          "label": "Hafler R",
+          "type": "ctype-mklgs3db-lybe8",
+          "position": "bottom",
+          "direction": "out"
+        },
+        {
+          "id": "port-mkll9gt3-kd68p",
+          "label": "Crown L",
+          "type": "ctype-mklgs3db-lybe8",
+          "position": "bottom",
+          "direction": "out"
+        },
+        {
+          "id": "port-mkllabgl-dx2ja",
+          "label": "Crown R",
+          "type": "ctype-mklgs3db-lybe8",
+          "position": "bottom",
+          "direction": "out"
         }
       ],
       "style": {}
@@ -1406,6 +1434,62 @@
           "type": "ethernet",
           "position": "left",
           "direction": "bidirectional"
+        }
+      ],
+      "style": {}
+    },
+    {
+      "id": "device-mklhnx2n-r2n4e",
+      "type": "other",
+      "label": "Hafler",
+      "detectionId": null,
+      "position": {
+        "x": -422.7959495564745,
+        "y": 349.68929589086605
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "port-mkll8l79-5gbsd",
+          "label": "L Input",
+          "type": "ctype-mklgs3db-lybe8",
+          "position": "right",
+          "direction": "in"
+        },
+        {
+          "id": "port-mkll93eu-zs335",
+          "label": "R Input",
+          "type": "ctype-mklgs3db-lybe8",
+          "position": "right",
+          "direction": "in"
+        }
+      ],
+      "style": {}
+    },
+    {
+      "id": "device-mklho47t-xpv7s",
+      "type": "other",
+      "label": "Crown Reference",
+      "detectionId": null,
+      "position": {
+        "x": -429.8080340740308,
+        "y": 448.08986683460427
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "port-mkll9v0l-s3l1a",
+          "label": "L Input",
+          "type": "ctype-mklgs3db-lybe8",
+          "position": "right",
+          "direction": "in"
+        },
+        {
+          "id": "port-mkllaodj-4gy4y",
+          "label": "R Input",
+          "type": "ctype-mklgs3db-lybe8",
+          "position": "right",
+          "direction": "in"
         }
       ],
       "style": {}
@@ -1825,6 +1909,42 @@
       "targetPort": "port-mklhcyvz-k85h8",
       "type": "ethernet",
       "label": "White \"MTRX\""
+    },
+    {
+      "id": "conn-mkll8wpr-bo8bm",
+      "source": "device-mklgyfic-9wi11",
+      "target": "device-mklhnx2n-r2n4e",
+      "sourcePort": "port-mkll7ycr-i72zr",
+      "targetPort": "port-mkll8l79-5gbsd",
+      "type": "ctype-mklgs3db-lybe8",
+      "label": ""
+    },
+    {
+      "id": "conn-mkll9e6k-hx88b",
+      "source": "device-mklgyfic-9wi11",
+      "target": "device-mklhnx2n-r2n4e",
+      "sourcePort": "port-mkll7ywh-mymc0",
+      "targetPort": "port-mkll93eu-zs335",
+      "type": "ctype-mklgs3db-lybe8",
+      "label": ""
+    },
+    {
+      "id": "conn-mklla63o-z9zjw",
+      "source": "device-mklgyfic-9wi11",
+      "target": "device-mklho47t-xpv7s",
+      "sourcePort": "port-mkll9gt3-kd68p",
+      "targetPort": "port-mkll9v0l-s3l1a",
+      "type": "ctype-mklgs3db-lybe8",
+      "label": ""
+    },
+    {
+      "id": "conn-mkllaw00-zcj17",
+      "source": "device-mklgyfic-9wi11",
+      "target": "device-mklho47t-xpv7s",
+      "sourcePort": "port-mkllabgl-dx2ja",
+      "targetPort": "port-mkllaodj-4gy4y",
+      "type": "ctype-mklgs3db-lybe8",
+      "label": ""
     }
   ],
   "connectionTypes": [
