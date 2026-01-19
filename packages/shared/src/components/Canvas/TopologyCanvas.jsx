@@ -293,8 +293,9 @@ export default function TopologyCanvas({
         onDrop={handleDrop}
         fitView
         className={styles.reactFlow}
-        selectionOnDrag={true}
-        panOnDrag={[1, 2]}
+        selectionOnDrag={false}
+        panOnDrag={true}
+        selectionKeyCode="Shift"
         multiSelectionKeyCode="Meta"
       >
         <Background />

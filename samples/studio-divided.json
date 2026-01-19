@@ -8,8 +8,8 @@
       "label": "Mac Studio",
       "detectionId": null,
       "position": {
-        "x": -391.19312863541865,
-        "y": -558.7006049494945
+        "x": -359.47395860402685,
+        "y": -713.3315588525295
       },
       "canvas": "current",
       "ports": [
@@ -565,13 +565,27 @@
       "label": "Presonus interface",
       "detectionId": null,
       "position": {
-        "x": -465.35519804475626,
-        "y": 144.300958408211
+        "x": -449.3551980447562,
+        "y": 180.300958408211
       },
       "canvas": "current",
       "ports": [
         {
           "id": "usb",
+          "label": "XLR In",
+          "type": "ctype-mklgs3db-lybe8",
+          "position": "bottom",
+          "direction": "in"
+        },
+        {
+          "id": "port-mklgset2-0394t",
+          "label": "XLR Out",
+          "type": "ctype-mklgs3db-lybe8",
+          "position": "bottom",
+          "direction": "out"
+        },
+        {
+          "id": "port-mklgssri-yn6qx",
           "label": "USB",
           "type": "usb",
           "position": "top",
@@ -791,14 +805,49 @@
       "label": "10G Switch",
       "detectionId": null,
       "position": {
-        "x": -676.6664472284622,
-        "y": -535.0620801967025
+        "x": -574.5433238127803,
+        "y": -563.1106245064593
       },
       "canvas": "current",
       "ports": [
         {
           "id": "ethernet",
-          "label": "Ethernet",
+          "label": "Eth3",
+          "type": "ethernet",
+          "position": "top",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "port-mklge86q-umtn1",
+          "label": "Eth8",
+          "type": "ethernet",
+          "position": "right",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "port-mklgkoig-w3i5w",
+          "label": "Eth4",
+          "type": "ethernet",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "port-mklgno1b-0ed7u",
+          "label": "Eth2",
+          "type": "ethernet",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "port-mklh2j1k-4kdx4",
+          "label": "Eth7",
+          "type": "ethernet",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "port-mklhcyvz-k85h8",
+          "label": "Eth6",
           "type": "ethernet",
           "position": "right",
           "direction": "bidirectional"
@@ -812,8 +861,8 @@
       "label": "USB>Eth USB HUB",
       "detectionId": null,
       "position": {
-        "x": -201.51744310531348,
-        "y": -506.59079349308763
+        "x": -169.79827307392168,
+        "y": -661.2217473961226
       },
       "canvas": "current",
       "ports": [
@@ -1021,8 +1070,8 @@
       "label": "10 TB",
       "detectionId": null,
       "position": {
-        "x": -181.1958957658507,
-        "y": -599.0055692682098
+        "x": -149.4767257344589,
+        "y": -753.6365231712448
       },
       "canvas": "current",
       "ports": [
@@ -1041,8 +1090,8 @@
       "label": "HDMI>Eth Studio Mon 1",
       "detectionId": null,
       "position": {
-        "x": -202.9781095808487,
-        "y": -689.4415426180408
+        "x": -171.2589395494569,
+        "y": -844.0724965210758
       },
       "canvas": "current",
       "ports": [
@@ -1115,8 +1164,8 @@
       "label": "MicroSD Card",
       "detectionId": null,
       "position": {
-        "x": -554.0537570845489,
-        "y": -648.815431191366
+        "x": -562.5121366773,
+        "y": -827.1876644177581
       },
       "canvas": "current",
       "ports": [
@@ -1135,8 +1184,8 @@
       "label": "Rack",
       "detectionId": null,
       "position": {
-        "x": -175.37173323415584,
-        "y": -805.0937400935622
+        "x": -316.1255502484569,
+        "y": -890.3390095529277
       },
       "canvas": "current",
       "ports": [],
@@ -1158,6 +1207,208 @@
       "style": {
         "fontSize": "24px"
       }
+    },
+    {
+      "id": "device-mklgdnkc-viqil",
+      "type": "computer",
+      "label": "Mac Mini",
+      "detectionId": null,
+      "position": {
+        "x": 866.7499332141845,
+        "y": -508.94002688783144
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "thunderbolt-1",
+          "label": "TB1",
+          "type": "thunderbolt",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "thunderbolt-2",
+          "label": "TB2",
+          "type": "thunderbolt",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "thunderbolt-3",
+          "label": "Eth",
+          "type": "ethernet",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "usb-c-1",
+          "label": "USB-C 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "usb-c-2",
+          "label": "USB-C 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "bidirectional"
+        }
+      ],
+      "style": {}
+    },
+    {
+      "id": "device-mklgm3ou-53uk9",
+      "type": "computer",
+      "label": "PC",
+      "detectionId": null,
+      "position": {
+        "x": -882.8807400497172,
+        "y": -688.9103589990339
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "thunderbolt-1",
+          "label": "TB1",
+          "type": "thunderbolt",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "thunderbolt-2",
+          "label": "TB2",
+          "type": "thunderbolt",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "thunderbolt-3",
+          "label": "TB3",
+          "type": "thunderbolt",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "usb-c-1",
+          "label": "USB-C 1",
+          "type": "usb",
+          "position": "right",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "usb-c-2",
+          "label": "USB-C 2",
+          "type": "usb",
+          "position": "right",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "port-mklgm7g9-zd40e",
+          "label": "Eth",
+          "type": "ethernet",
+          "position": "right",
+          "direction": "bidirectional"
+        }
+      ],
+      "style": {}
+    },
+    {
+      "id": "device-mklgneca-8f2d5",
+      "type": "network-device",
+      "label": "Synology",
+      "detectionId": null,
+      "position": {
+        "x": -914.3348393026502,
+        "y": -576.1093907512682
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "usb",
+          "label": "USB",
+          "type": "usb",
+          "position": "left",
+          "direction": "in"
+        },
+        {
+          "id": "ethernet",
+          "label": "Ethernet",
+          "type": "ethernet",
+          "position": "right",
+          "direction": "bidirectional"
+        }
+      ]
+    },
+    {
+      "id": "device-mklgyfic-9wi11",
+      "type": "other",
+      "label": "Patch Bay",
+      "detectionId": null,
+      "position": {
+        "x": 940.014657211832,
+        "y": 257.81924324590386
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "port-mklgypil-84h36",
+          "label": "Port 9",
+          "type": "ctype-mklgs3db-lybe8",
+          "position": "left",
+          "direction": "bidirectional"
+        },
+        {
+          "id": "port-mklgysg3-38d46",
+          "label": "Port 10",
+          "type": "ctype-mklgs3db-lybe8",
+          "position": "left",
+          "direction": "bidirectional"
+        }
+      ],
+      "style": {}
+    },
+    {
+      "id": "device-mklh22hf-mxd18",
+      "type": "other",
+      "label": "Router",
+      "detectionId": null,
+      "position": {
+        "x": -1075.2183545319972,
+        "y": -495.982833489649
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "port-mklh26dz-p0hoq",
+          "label": "Port 1",
+          "type": "ethernet",
+          "position": "right",
+          "direction": "bidirectional"
+        }
+      ],
+      "style": {}
+    },
+    {
+      "id": "device-mklhie8o-my2oh",
+      "type": "other",
+      "label": "Matrix",
+      "detectionId": null,
+      "position": {
+        "x": 669.425742877719,
+        "y": -428.22877648701274
+      },
+      "canvas": "current",
+      "ports": [
+        {
+          "id": "port-mklhilnz-esiv2",
+          "label": "Eth",
+          "type": "ethernet",
+          "position": "left",
+          "direction": "bidirectional"
+        }
+      ],
+      "style": {}
     }
   ],
   "connections": [
@@ -1310,7 +1561,7 @@
       "source": "device-mk5rqzqj-md293",
       "target": "device-mk5snsf7-38f1g",
       "sourcePort": "port-mk5sghfs-dyffk",
-      "targetPort": "usb",
+      "targetPort": "port-mklgssri-yn6qx",
       "type": "usb",
       "label": ""
     },
@@ -1511,6 +1762,69 @@
       "targetPort": "port-mk5vi41t-0rgoa",
       "type": "ctype-mk5vhpzn-sy7df",
       "label": ""
+    },
+    {
+      "id": "conn-mklgeh8q-ey2bk",
+      "source": "device-mklgdnkc-viqil",
+      "target": "device-mk5uko5n-kk4v3",
+      "sourcePort": "thunderbolt-3",
+      "targetPort": "port-mklge86q-umtn1",
+      "type": "ethernet",
+      "label": "White \"mac mini to switch\""
+    },
+    {
+      "id": "conn-mklgmelz-hv9fl",
+      "source": "device-mklgm3ou-53uk9",
+      "target": "device-mk5uko5n-kk4v3",
+      "sourcePort": "port-mklgm7g9-zd40e",
+      "targetPort": "port-mklgkoig-w3i5w",
+      "type": "ethernet",
+      "label": "Eth \"PC to MacMini\""
+    },
+    {
+      "id": "conn-mklgnxj5-bxaym",
+      "source": "device-mklgneca-8f2d5",
+      "target": "device-mk5uko5n-kk4v3",
+      "sourcePort": "ethernet",
+      "targetPort": "port-mklgno1b-0ed7u",
+      "type": "ethernet",
+      "label": ""
+    },
+    {
+      "id": "conn-mklgtk6u-3wq9o",
+      "source": "device-mk5snsf7-38f1g",
+      "target": "device-mklgyfic-9wi11",
+      "sourcePort": "port-mklgset2-0394t",
+      "targetPort": "port-mklgysg3-38d46",
+      "type": "ctype-mklgs3db-lybe8",
+      "label": ""
+    },
+    {
+      "id": "conn-mklh00m9-bwmr1",
+      "source": "device-mklgyfic-9wi11",
+      "target": "device-mk5snsf7-38f1g",
+      "sourcePort": "port-mklgypil-84h36",
+      "targetPort": "usb",
+      "type": "ctype-mklgs3db-lybe8",
+      "label": ""
+    },
+    {
+      "id": "conn-mklh3bfo-ves6k",
+      "source": "device-mklh22hf-mxd18",
+      "target": "device-mk5uko5n-kk4v3",
+      "sourcePort": "port-mklh26dz-p0hoq",
+      "targetPort": "port-mklh2j1k-4kdx4",
+      "type": "ethernet",
+      "label": ""
+    },
+    {
+      "id": "conn-mklhiune-42o6d",
+      "source": "device-mklhie8o-my2oh",
+      "target": "device-mk5uko5n-kk4v3",
+      "sourcePort": "port-mklhilnz-esiv2",
+      "targetPort": "port-mklhcyvz-k85h8",
+      "type": "ethernet",
+      "label": "White \"MTRX\""
     }
   ],
   "connectionTypes": [
@@ -1543,6 +1857,11 @@
       "id": "ctype-mk5vhpzn-sy7df",
       "name": "SD Card",
       "color": "#888888"
+    },
+    {
+      "id": "ctype-mklgs3db-lybe8",
+      "name": "XLR",
+      "color": "#141414"
     }
   ]
 }
